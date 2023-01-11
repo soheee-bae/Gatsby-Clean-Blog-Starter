@@ -13,9 +13,19 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^2.2.1",
+    "@mdx-js/react": "^2.2.1",
+    "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^5.4.0",
+    "gatsby-plugin-mdx": "^5.4.0",
+    "gatsby-plugin-sharp": "^5.4.0",
+    "gatsby-plugin-styled-components": "^6.4.0",
+    "gatsby-remark-images": "^7.4.0",
+    "gatsby-source-filesystem": "^5.4.0",
+    "gatsby-transformer-sharp": "^5.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
   },
   "repository": {
     "type": "git",
