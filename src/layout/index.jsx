@@ -11,11 +11,12 @@ export class Layout extends React.Component {
         return (
             <React.Fragment>
                 <div className='container'>
+                    <Navbar />
                     <div className='innerContainer'>
-                        <Navbar />
                         {children}
+                        <Footer/>
                     </div>
-                    <Footer/>
+                    
                 </div>
             </React.Fragment>
         )
