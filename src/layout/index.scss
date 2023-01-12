@@ -1,0 +1,22 @@
+@import '../styles/mixins';
+
+body {
+    margin:0;
+    padding:0;
+    // font-family: 'Noto Sans KR', sans-serif;
+    // -webkit-text-size-adjust: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+    // transition: background-color 0.3s, color 0.3s;
+  }
+
+.container{
+  
+   
+}
+.innerContainer{
+    display: flex;
+    flex-direction: column;
+    @include md {
+        flex-direction: row;
+    }
+}

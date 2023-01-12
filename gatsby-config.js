@@ -40,6 +40,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `layout`,
+        path: `${__dirname}/src/layout`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `styles`,
         path: `${__dirname}/assets`,
       },
@@ -61,5 +68,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sass`,
   ],
 };
