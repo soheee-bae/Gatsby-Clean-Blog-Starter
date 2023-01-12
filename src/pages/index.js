@@ -1,10 +1,14 @@
 import * as React from "react";
+import { Bio } from "../components/bio";
 import { Layout } from "../layout";
+import "../styles/_typography.scss";
 
 export default function Home() {
   return (
     <Layout>
       <div>
+        <h1 className="h1">IWTL</h1>
+        <Bio />
         <p>Starting of this blog...</p>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting

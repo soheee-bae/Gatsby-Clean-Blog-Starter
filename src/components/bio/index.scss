@@ -1,0 +1,26 @@
+.bio{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    border:1px solid red;
+}
+
+.bio-image{
+    border-radius: 50%;
+    border:1px solid black;
+    width:20px;
+    height: 20px;
+}
+
+.bio-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.bio-link{
+
+}
+
+.bio-quote{
+
+}
