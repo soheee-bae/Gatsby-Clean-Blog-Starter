@@ -1,0 +1,74 @@
+:root {
+    --text-3xs: 10px;
+    --text-2xs: 11px;
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-2xl: 24px;
+    --text-3xl: 30px;
+    --text-4xl: 36px;
+    --text-5xl: 48px;
+    --text-6xl: 60px;
+    --text-7xl: 72px;
+    --text-8xl: 96px;
+    --text-9xl: 128px;
+
+    --font-thin: 100;
+    --font-extralight: 200;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+
+}
+
+.h1 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+}
+
+.h2 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-semibold);
+}
+
+.h3 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-medium);
+}
+
+.h4 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+}
+
+.h5 {
+    font-size: var(--text-base);
+    font-weight: var(--font-normal);
+}
+
+.h6 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-normal);
+}
+
+.body-1 {
+    font-size: var(--text-xs);
+    font-weight: var(--font-normal);
+}
+
+.body-2 {
+    font-size: var(--text-2xs);
+    font-weight: var(--font-light);
+}
+
+.body-3 {
+    font-size: var(--text-3xs);
+    font-weight: var(--font-light);
+}
+
