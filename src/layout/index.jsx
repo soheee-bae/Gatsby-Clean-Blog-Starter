@@ -16,7 +16,6 @@ export class Layout extends React.Component {
                         {children}
                         <Footer/>
                     </div>
-                    
                 </div>
             </React.Fragment>
         )

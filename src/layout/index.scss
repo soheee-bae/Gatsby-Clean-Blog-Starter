@@ -27,7 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: $height;    
+    min-height: $height;
     @include md {
         margin-left: $navbar-width-bigScreen;
 

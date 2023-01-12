@@ -4,7 +4,7 @@ import { Layout } from "../layout";
 export default function Home() {
   return (
     <Layout>
-      <div style={{ padding: "30px" }}>
+      <div>
         <p>Starting of this blog...</p>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
