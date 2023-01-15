@@ -7,8 +7,8 @@
     --text-lg: 18px;
     --text-xl: 20px;
     --text-2xl: 24px;
-    --text-3xl: 30px;
-    --text-4xl: 36px;
+    --text-3xl: 32px;
+    --text-4xl: 38px;
     --text-5xl: 48px;
     --text-6xl: 60px;
     --text-7xl: 72px;
@@ -23,52 +23,41 @@
     --font-semibold: 600;
     --font-bold: 700;
     --font-extrabold: 800;
-    --font-black: 900;
 
 }
 
+// blog title in main
 .h1 {
-    font-size: var(--text-3xl);
+    font-size: var(--text-5xl);
     font-weight: var(--font-bold);
 }
 
+//title in detail page
 .h2 {
-    font-size: var(--text-2xl);
+    font-size: var(--text-3xl);
     font-weight: var(--font-semibold);
 }
 
+// subtitle in detail page
 .h3 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-medium);
+}
+
+//title of each blog in main
+.h4 {
     font-size: var(--text-xl);
     font-weight: var(--font-medium);
 }
 
-.h4 {
-    font-size: var(--text-lg);
-    font-weight: var(--font-medium);
-}
-
+//content
 .h5 {
-    font-size: var(--text-base);
-    font-weight: var(--font-normal);
-}
-
-.h6 {
     font-size: var(--text-sm);
     font-weight: var(--font-normal);
 }
 
-.body-1 {
+//date 
+.h6 {
     font-size: var(--text-xs);
     font-weight: var(--font-normal);
 }
-
-.body-2 {
-    font-size: var(--text-2xs);
-    font-weight: var(--font-light);
-}
-
-.body-3 {
-    font-size: var(--text-3xs);
-    font-weight: var(--font-light);
-}
-

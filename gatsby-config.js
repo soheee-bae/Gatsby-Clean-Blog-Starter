@@ -8,7 +8,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 
-const metaConfig = require('./gatsby-metaconfig')
+const metaConfig = require("./gatsby-metaconfig");
 
 module.exports = {
   siteMetadata: metaConfig,
@@ -51,8 +51,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `styles`,
-        path: `${__dirname}/assets`,
+        name: `images`,
+        path: `${__dirname}/assets/images`,
       },
     },
     {
