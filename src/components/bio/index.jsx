@@ -21,15 +21,12 @@ const Bio = () => {
               <Image
                 className="bio-image"
                 fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              fadeIn={true}
-                style={{
-                  borderRadius: `100%`,
-                }}
+                alt={author}
+                fadeIn={true}
               />
                 <div className='bio-content'>
                   <span className='bio-link' onClick={()=>onClick(githubUrl)}>@{author}</span>
-                  <p className='bio-quote'>{bio}</p>
+                  <p className='bio-text'>{bio}</p>
                 </div>
               </div>
         )

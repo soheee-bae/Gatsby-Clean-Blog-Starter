@@ -50,14 +50,21 @@
     font-weight: var(--font-medium);
 }
 
-//content
+//bio
 .h5 {
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+}
+
+
+//content
+.body-1{
     font-size: var(--text-sm);
     font-weight: var(--font-normal);
 }
-
 //date 
-.h6 {
+
+.body-2{
     font-size: var(--text-xs);
     font-weight: var(--font-normal);
 }

@@ -4,34 +4,30 @@
 .bio{
     display: flex;
     flex-direction: row;
-    gap:10px;
+    gap:15px;
+    padding:50px;
 }
 
 .bio-image{
     border-radius: 50%;
-    border:1px solid black;
-    width:45px;
-    height: 45px;
+    border:none;
 }
 
 .bio-content{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }
 
 .bio-link{
+    @extend .h5;
     cursor: pointer;
-    font-size: var(--text-sm);
-    font-weight: var(--font-semibold);
     color: var(--darkest-gray);
-    :hover{
-        font-weight: var(--font-extrabold);
-    }
 }
 
-.bio-quote{
-    font-size: var(--text-sm);
-    font-weight: var(--font-normal);
+.bio-text{
+    @extend .body-1;
+    margin: 0;
     color: var(--dark-gray);
-
 }
