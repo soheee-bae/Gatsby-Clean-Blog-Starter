@@ -1,10 +1,8 @@
-import React from 'react'
-import './index.scss'
+import React from "react";
+import "./index.scss";
 
 export const Navbar = () => (
-  <div className='navbar'>
-        <ul>
-          
-        </ul>
+  <div className="navbar">
+    <ul></ul>
   </div>
-)
+);

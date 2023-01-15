@@ -1,43 +1,41 @@
-import React from 'react'
-import Image from 'gatsby-image'
-import { StaticQuery, graphql } from 'gatsby'
+import React from "react";
+import Image from "gatsby-image";
+import { StaticQuery, graphql } from "gatsby";
 
-import './index.scss'
+import "./index.scss";
 
 const Bio = () => {
+  const onClick = (githubUrl) => {
+    window.open(githubUrl, "_blank");
+  };
 
-  const onClick = githubUrl => {
-    window.open(githubUrl, '_blank')
-  }
+  return (
+    <StaticQuery
+      query={bioQuery}
+      render={(data) => {
+        const { author, bio, githubUrl } = data.site.siteMetadata;
 
-  return <StaticQuery
-    query={bioQuery}
-    render={
-      data => {
-        const { author, bio, githubUrl } = data.site.siteMetadata
-        
         return (
-          <div className='bio'>
-              <Image
-                className="bio-image"
-                fixed={data.avatar.childImageSharp.fixed}
-                alt={author}
-                fadeIn={true}
-              />
-                <div className='bio-content'>
-                  <span className='bio-link' onClick={()=>onClick(githubUrl)}>@{author}</span>
-                  <p className='bio-text'>{bio}</p>
-                </div>
-              </div>
-        )
-      }
-    }
-  />
-
-
- 
-}
-export default Bio
+          <div className="bio">
+            <Image
+              className="bio-image"
+              fixed={data.avatar.childImageSharp.fixed}
+              alt={author}
+              fadeIn={true}
+            />
+            <div className="bio-content">
+              <span className="bio-link" onClick={() => onClick(githubUrl)}>
+                @{author}
+              </span>
+              <p className="bio-text">{bio}</p>
+            </div>
+          </div>
+        );
+      }}
+    />
+  );
+};
+export default Bio;
 
 const bioQuery = graphql`
   query BioQuery {
@@ -55,5 +53,5 @@ const bioQuery = graphql`
         githubUrl
       }
     }
-  }`
-
+  }
+`;

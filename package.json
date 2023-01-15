@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-iwtl",
+  "name": "gatsby-clean-starter",
   "private": true,
-  "description": "Blog starter for Gatsby",
+  "description": "Gatsby Clean Theme Blog starter",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
@@ -10,7 +10,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "prettier": "prettier --write \"./**/*.{js,jsx,json}\""
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.2.1",
@@ -38,5 +39,8 @@
   },
   "bugs": {
     "url": "https://github.com/sohee28/gatsby-clean-blog/issues"
+  },
+  "devDependencies": {
+    "prettier": "2.8.3"
   }
 }
