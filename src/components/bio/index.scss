@@ -1,33 +1,32 @@
-@import '../../styles/typography';
-@import '../../styles/colors';
+@import "../../styles/typography";
+@import "../../styles/colors";
 
-.bio{
-    display: flex;
-    flex-direction: row;
-    gap:15px;
-    padding:50px;
+.bio {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
 }
 
-.bio-image{
-    border-radius: 50%;
-    border:none;
+.bio-image {
+  border-radius: 50%;
+  border: none;
 }
 
-.bio-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+.bio-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
 }
 
-.bio-link{
-    @extend .h5;
-    cursor: pointer;
-    color: var(--darkest-gray);
+.bio-link {
+  @extend .h5;
+  cursor: pointer;
+  color: var(--darkest-gray);
 }
 
-.bio-text{
-    @extend .body-1;
-    margin: 0;
-    color: var(--dark-gray);
+.bio-text {
+  @extend .body-1;
+  margin: 0;
+  color: var(--dark-gray);
 }
