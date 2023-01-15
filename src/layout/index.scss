@@ -1,5 +1,6 @@
 @import '../styles/mixins';
 @import '../styles/size';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 $height:calc(100vh - $navbar-height-smallScreen);
 
@@ -7,7 +8,7 @@ body {
     margin:0;
     padding:0;
     height:100%;
-    // font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     // -webkit-text-size-adjust: antialiased;
     // -moz-osx-font-smoothing: grayscale;
     // transition: background-color 0.3s, color 0.3s;

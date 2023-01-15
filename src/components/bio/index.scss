@@ -1,3 +1,5 @@
+@import '../../styles/typography';
+@import '../../styles/colors';
 .bio{
     display: flex;
     flex-direction: row;
@@ -8,8 +10,8 @@
 .bio-image{
     border-radius: 50%;
     border:1px solid black;
-    width:20px;
-    height: 20px;
+    width:45px;
+    height: 45px;
 }
 
 .bio-content{
@@ -18,9 +20,19 @@
 }
 
 .bio-link{
-
+    cursor: pointer;
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--darkest-gray);
+    border:1px solid red;
+    margin:0;
 }
 
 .bio-quote{
+    font-size: var(--text-xs);
+    font-weight: var(--font-normal);
+    color: var(--dark-gray);
+
+    border:1px solid red;
 
 }

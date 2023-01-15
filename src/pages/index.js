@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Bio } from "../components/bio";
+import Bio from "../components/bio";
 import { Layout } from "../layout";
 import "../styles/_typography.scss";
 

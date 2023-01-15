@@ -7,7 +7,11 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+const metaConfig = require('./gatsby-metaconfig')
+
 module.exports = {
+  siteMetadata: metaConfig,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
