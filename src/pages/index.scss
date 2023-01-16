@@ -1,7 +1,10 @@
 @import "../styles/size";
 
-.mainContainer {
+.homeContainer {
   width: $mainContent-width;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 26px;
+  padding-top: 100px;
 }

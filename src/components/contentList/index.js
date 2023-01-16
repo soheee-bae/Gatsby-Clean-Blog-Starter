@@ -1,19 +1,20 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
+import "./index.scss";
 
-const Contents = () => {
+const ContentList = () => {
   return (
     <StaticQuery
-      query={contentsQuery}
+      query={contentListQuery}
       render={(data) => {
         const posts = data.allMarkdownRemark.edges;
 
         return (
-          <div>
+          <div className="listContainer">
             {posts.map((post) => (
-              <div key={post.node.id}>
-                <h4 className="h4 ">{post.node.frontmatter.title}</h4>
-                <p className="body-1 ">{post.node.internal.content}</p>
+              <div key={post.node.id} className="listContent">
+                <h4 className="h4 listTitle">{post.node.frontmatter.title}</h4>
+                <p className="body-1 listText">{post.node.internal.content}</p>
               </div>
             ))}
           </div>
@@ -22,10 +23,10 @@ const Contents = () => {
     />
   );
 };
-export default Contents;
+export default ContentList;
 
-const contentsQuery = graphql`
-  query ContentsQuery {
+const contentListQuery = graphql`
+  query ContentListQuery {
     allMarkdownRemark(
       filter: { frontmatter: { category: { ne: "null" } } }
       sort: { frontmatter: { date: ASC } }

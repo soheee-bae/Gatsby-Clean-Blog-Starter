@@ -1,0 +1,18 @@
+.listContainer {
+  padding: 0;
+}
+
+.listContent {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.listTitle {
+  margin: 0;
+  color: var(--light-black);
+}
+
+.listText {
+  line-height: 1.4rem;
+  color: var(--darkest-gray);
+}

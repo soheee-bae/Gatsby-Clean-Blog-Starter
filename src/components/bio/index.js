@@ -16,18 +16,18 @@ const Bio = () => {
         const { author, bio, githubUrl } = data.site.siteMetadata;
 
         return (
-          <div className="bio">
+          <div className="bioContainer">
             <Image
-              className="bio-image"
+              className="bioImage"
               fixed={data.avatar.childImageSharp.fixed}
               alt={author}
               fadeIn={true}
             />
-            <div className="bio-content">
-              <span className="bio-link" onClick={() => onClick(githubUrl)}>
+            <div className="bioContent">
+              <span className="bioLink" onClick={() => onClick(githubUrl)}>
                 @{author}
               </span>
-              <p className="bio-text">{bio}</p>
+              <p className="bioText">{bio}</p>
             </div>
           </div>
         );
