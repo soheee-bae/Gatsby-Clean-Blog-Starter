@@ -1,13 +1,11 @@
 ---
-title: "Category Test2_1"
+title: "블로그 시작한 이유..."
 date: 2020-07-01 16:21:13
 category: "category2"
 ---
 
-Category Test2_1 !!!
+이날 임순례 감독은 "그 이전에 작품 주기가 4년 정도가 평균이었다. 그래서 저한테 올림픽 감독이라고 하더라. '리틀 포레스트'를 끝내고 그 주기를 좁혀보려고 했는데, 코로나 때문에 5년 만에 '교섭'을 개봉하게 됐다"고 밝혔다.
 
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+이어 "코로나 때문에 관객 파이가 적어져서 걱정이 되는 지점이 있다. 오랜만에 개봉해서 긴장된다. '교섭'은 제가 했던 영화 중 제일 예산이 많이 들어간 영화다. 손익분기점을 꼭 넘겨야 하는 그런 걱정을 오랜만에 하는 것 같다"고 덧붙여 웃음을 자아냈다.
 
-If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
-
-It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+임순례 감독과 황정민은 '와이키키 브라더스' 이후 22년 만에 재회하게 됐다. 이와 관련해 임순례 감독은 "황정민 배우는 아시다시피 상업적이고 액션으로 죽이고 패고 하는 영화에 나왔다. 나와 결이 안 맞았다. 그래서 황정민 배우에게 캐스팅 제안할만한 영화가 없었다. 이 영화 같은 경우에는 물론 황정민 배우가 멀끔한 외교관 역할에 맞지는 않지만, 그런데도 처음부터 끝까지 영화를 이끌어가는 정재호라는 인물에 의해서 가는 영화라고 생각했다"고 설명했다.

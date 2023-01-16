@@ -13,6 +13,11 @@
 }
 
 .listText {
-  line-height: 1.4rem;
+  line-height: 1.3rem;
+  height: 4.2rem;
+  overflow: hidden;
   color: var(--darkest-gray);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }

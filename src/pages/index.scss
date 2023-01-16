@@ -5,6 +5,11 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 30px;
   padding-top: 100px;
+}
+
+hr {
+  border: 1px solid var(--lightest-gray);
+  width: 100%;
 }

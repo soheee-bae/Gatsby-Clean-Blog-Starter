@@ -14,6 +14,7 @@ export default function Home() {
       <div className="homeContainer">
         <Header />
         <Bio />
+        <hr />
         <ContentList />
       </div>
     </Layout>
