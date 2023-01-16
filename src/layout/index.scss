@@ -14,6 +14,11 @@ body {
   // transition: background-color 0.3s, color 0.3s;
 }
 
+hr {
+  border: 1px solid var(--lightest-gray);
+  width: 100%;
+}
+
 .container {
   position: relative;
   display: flex;

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Layout } from "../layout";
 
 import Bio from "../components/bio";
-import ContentList from "../components/contentList";
+import ContentLists from "../components/contentLists";
 import Header from "../components/header";
 
 import "../styles/_typography.scss";
@@ -15,7 +15,7 @@ export default function Home() {
         <Header />
         <Bio />
         <hr />
-        <ContentList />
+        <ContentLists />
       </div>
     </Layout>
   );

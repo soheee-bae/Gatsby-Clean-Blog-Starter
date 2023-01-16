@@ -1,11 +1,10 @@
 @import "../styles/size";
 
-.homeContainer {
+.templateContainer {
   max-width: $mainContent-width;
   padding: 0 20px;
   height: 100%;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-top: 100px;
 }

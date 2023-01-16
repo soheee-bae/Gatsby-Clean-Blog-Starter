@@ -5,19 +5,42 @@ exports.createPages = ({ graphql, actions }) => {
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
   return graphql(
     `
-      query loadPagesQuery($limit: Int!) {
-        allMarkdownRemark(limit: $limit) {
+      {
+        allMarkdownRemark(
+          filter: { frontmatter: { category: { ne: null } } }
+          sort: { frontmatter: { date: DESC } }
+          limit: 1000
+        ) {
           edges {
             node {
-              frontmatter {
+              fields {
                 slug
+              }
+              frontmatter {
+                title
+                category
+              }
+            }
+            previous {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
+            next {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
               }
             }
           }
         }
       }
-    `,
-    { limit: 1000 }
+    `
   ).then((result) => {
     if (result.errors) {
       throw result.errors;
