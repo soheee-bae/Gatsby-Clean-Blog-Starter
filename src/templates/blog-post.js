@@ -1,33 +1,34 @@
-import { StaticQuery, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import React from "react";
 
 import { Layout } from "../layout";
 import "./blog-post.scss";
 
-export default ({ data, pageContext, location }) => {
+const BlogPost = ({ data, pageContext, location }) => {
   console.log(data);
+  console.log(pageContext);
+  console.log(location);
   return (
     <Layout>
-      <div className="templateContainer"></div>
+      <div className="templateContainer">Hello</div>
     </Layout>
   );
 };
 
-const blogQuery = graphql`
+export default BlogPost;
+
+export const blogQuery = graphql`
   query BlogQuery($slug: String!) {
-    allMarkdownRemark(
-      sort: { frontmatter: { date: DESC } }
-      filter: { frontmatter: { slug: { eq: $slug } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            slug
-            title
-            date(formatString: "MMMM DD, YYYY")
-            category
-          }
-        }
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }

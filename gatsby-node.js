@@ -46,8 +46,6 @@ exports.createPages = ({ graphql, actions }) => {
     if (result.errors) {
       throw result.errors;
     }
-    console.log(result.data);
-    console.log("----------------");
 
     result.data.allMarkdownRemark.edges.forEach((edge) => {
       createPage({
@@ -66,12 +64,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` });
+    let value = createFilePath({ node, getNode });
 
     createNodeField({
       name: `slug`,
       node,
-      value: slug,
+      value,
     });
   }
 };

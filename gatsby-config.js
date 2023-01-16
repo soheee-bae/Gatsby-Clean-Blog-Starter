@@ -17,15 +17,8 @@ module.exports = {
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
-    //     name: `category1`,
-    //     path: `${__dirname}/content/category1`,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `category2`,
-    //     path: `${__dirname}/content/category2`,
+    //     name: `templates`,
+    //     path: `${__dirname}/src/templates`,
     //   },
     // },
     {
