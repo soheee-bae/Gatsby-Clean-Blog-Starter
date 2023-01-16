@@ -1,0 +1,7 @@
+@import "../styles/size";
+
+.mainContainer {
+  width: $mainContent-width;
+  display: flex;
+  flex-direction: column;
+}

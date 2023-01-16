@@ -1,36 +1,37 @@
-@import '../styles/mixins';
-@import '../styles/size';
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "../styles/mixins";
+@import "../styles/size";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
-$height:calc(100vh - $navbar-height-smallScreen);
+$height: calc(100vh - $navbar-height-smallScreen);
 
 body {
-    margin:0;
-    padding:0;
-    height:100%;
-    font-family: 'Open Sans', sans-serif;
-    // -webkit-text-size-adjust: antialiased;
-    // -moz-osx-font-smoothing: grayscale;
-    // transition: background-color 0.3s, color 0.3s;
-  }
-
-.container{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    @include md {
-        flex-direction: row;
-    }   
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+  // -webkit-text-size-adjust: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  // transition: background-color 0.3s, color 0.3s;
 }
 
-.innerContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: $height;
-    @include md {
-        margin-left: $navbar-width-bigScreen;
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  @include md {
+    flex-direction: row;
+  }
+}
 
-    }   
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: $height;
+  width: 100%;
+  @include md {
+    margin-left: $navbar-width-bigScreen;
+  }
 }
