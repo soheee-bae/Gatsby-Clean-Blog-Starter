@@ -6,9 +6,10 @@ import Bio from "../components/bio";
 
 import { Layout } from "../layout";
 import "./blog-post.scss";
+import PostNavigation from "../components/post-navigation";
 
-const BlogPost = ({ data, pageContext, location }) => {
-  const { site, markdownRemark } = data;
+const BlogPost = ({ data, pageContext }) => {
+  const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
 
   return (
@@ -16,6 +17,7 @@ const BlogPost = ({ data, pageContext, location }) => {
       <div className="templateContainer">
         <PostHeader data={frontmatter} />
         <PostContent content={html} />
+        <PostNavigation data={pageContext} />
         <hr />
         <Bio />
       </div>
@@ -27,11 +29,6 @@ export default BlogPost;
 
 export const blogQuery = graphql`
   query BlogQuery($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
