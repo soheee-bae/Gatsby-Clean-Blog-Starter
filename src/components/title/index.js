@@ -1,10 +1,10 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 
-const Header = () => {
+const Title = () => {
   return (
     <StaticQuery
-      query={headerQuery}
+      query={titleQuery}
       render={(data) => {
         const { title } = data.site.siteMetadata;
         return <div className="h1">{title}</div>;
@@ -12,10 +12,10 @@ const Header = () => {
     />
   );
 };
-export default Header;
+export default Title;
 
-const headerQuery = graphql`
-  query HeaderQuery {
+const titleQuery = graphql`
+  query TitleQuery {
     site {
       siteMetadata {
         title

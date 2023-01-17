@@ -1,16 +1,27 @@
 import { graphql } from "gatsby";
 import React from "react";
+import PostContent from "../components/post-content";
+import PostHeader from "../components/post-header";
+import Bio from "../components/bio";
 
 import { Layout } from "../layout";
 import "./blog-post.scss";
 
 const BlogPost = ({ data, pageContext, location }) => {
-  console.log(data);
-  console.log(pageContext);
-  console.log(location);
+  const { site, markdownRemark } = data;
+  const { frontmatter, internal } = markdownRemark;
+  const content = internal.content;
+
+  console.log(site);
+  console.log(markdownRemark);
   return (
     <Layout>
-      <div className="templateContainer">Hello</div>
+      <div className="templateContainer">
+        <PostHeader data={frontmatter} />
+        <PostContent content={content} />
+        <hr />
+        <Bio />
+      </div>
     </Layout>
   );
 };
@@ -29,6 +40,9 @@ export const blogQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+      }
+      internal {
+        content
       }
     }
   }

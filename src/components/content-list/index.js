@@ -2,12 +2,12 @@ import React from "react";
 import "./index.scss";
 
 import { StaticQuery, graphql } from "gatsby";
-import { ContentItem } from "../contentItem";
+import { ContentItem } from "../content-Item";
 
-const ContentLists = () => {
+const ContentList = () => {
   return (
     <StaticQuery
-      query={contentListsQuery}
+      query={contentListQuery}
       render={(data) => {
         const posts = data.allMarkdownRemark.edges;
 
@@ -22,10 +22,10 @@ const ContentLists = () => {
     />
   );
 };
-export default ContentLists;
+export default ContentList;
 
-const contentListsQuery = graphql`
-  query ContentListsQuery {
+const contentListQuery = graphql`
+  query ContentListQuery {
     allMarkdownRemark(
       filter: { frontmatter: { category: { ne: "null" } } }
       sort: { frontmatter: { date: DESC } }
