@@ -1,7 +1,12 @@
-@import '../../styles/size';
+@import "../../styles/size";
 
-.footer{
-    height:$footer-height !important;
-    padding-top: 30px;
-    text-align: center;
+.footer {
+  height: $footer-height !important;
+  padding-top: 30px;
+  text-align: center;
+  color: var(--dark-gray);
+  a {
+    text-decoration: none;
+    color: var(--light-black);
+  }
 }
