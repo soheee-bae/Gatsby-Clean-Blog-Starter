@@ -9,16 +9,13 @@ import "./blog-post.scss";
 
 const BlogPost = ({ data, pageContext, location }) => {
   const { site, markdownRemark } = data;
-  const { frontmatter, internal } = markdownRemark;
-  const content = internal.content;
+  const { frontmatter, html } = markdownRemark;
 
-  console.log(site);
-  console.log(markdownRemark);
   return (
     <Layout>
       <div className="templateContainer">
         <PostHeader data={frontmatter} />
-        <PostContent content={content} />
+        <PostContent content={html} />
         <hr />
         <Bio />
       </div>
@@ -37,12 +34,10 @@ export const blogQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      html
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-      }
-      internal {
-        content
       }
     }
   }
