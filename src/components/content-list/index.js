@@ -40,6 +40,9 @@ const contentListQuery = graphql`
           internal {
             content
           }
+          fields {
+            slug
+          }
         }
       }
     }
