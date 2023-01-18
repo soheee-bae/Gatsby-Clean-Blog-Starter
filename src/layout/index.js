@@ -13,6 +13,7 @@ export class Layout extends React.Component {
         <div className="container">
           <Navbar />
           <div className="innerContainer">
+            <Theme />
             {children}
             <Footer />
           </div>
