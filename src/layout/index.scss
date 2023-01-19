@@ -40,3 +40,9 @@ hr {
     margin-left: $navbar-width-bigScreen;
   }
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+}

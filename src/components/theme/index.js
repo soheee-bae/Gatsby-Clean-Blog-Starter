@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { LightOff, LightOn } from "../../../assets/icons";
 import { THEME } from "../../constants";
 import { getTheme, setTheme } from "../../utils";
+import LightOn from "../../../assets/icons/lightOn";
+import LightOff from "../../../assets/icons/lightOff";
+
+import "./index.scss";
 
 const Theme = () => {
   const [checked, setChecked] = useState(true);
@@ -23,8 +26,10 @@ const Theme = () => {
   }, []);
 
   return (
-    <div>
-      <button onClick={() => handleSwitch(!checked)}>Btn</button>Button
+    <div className="theme">
+      <button className="themeSwitch" onClick={() => handleSwitch(!checked)}>
+        {checked ? <LightOn /> : <LightOff />}
+      </button>
     </div>
   );
 };
