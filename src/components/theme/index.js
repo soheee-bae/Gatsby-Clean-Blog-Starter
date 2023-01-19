@@ -1,23 +1,32 @@
-import { LightOn } from "../../../assets/icons/lightOn";
-import { LightOff } from "../../../assets/icons/LightOff";
-
-const LIGHT = "light";
-const DARK = "dark";
-
-function getTheme(lightOn) {
-  return lightOn ? LIGHT : DARK;
-}
+import React, { useEffect, useState } from "react";
+import { LightOff, LightOn } from "../../../assets/icons";
+import { THEME } from "../../constants";
+import { getTheme, setTheme } from "../../utils";
 
 const Theme = () => {
-  const [lightOn, setLightOn] = useState(false);
+  const [checked, setChecked] = useState(true);
 
-  const handleClick = () => {
-    const theme = getTheme(lightOn);
-
-    setLightOn(!lightOn);
+  const getNewTheme = (checked) => {
+    return checked ? THEME.LIGHT : THEME.DARK;
   };
 
-  return <div onClick={handleClick}>{light ? <LightOn /> : <LightOff />}</div>;
+  const handleSwitch = (checked) => {
+    const newTheme = getNewTheme(checked);
+    setTheme(newTheme);
+    setChecked(checked);
+  };
+
+  useEffect(() => {
+    const defaultTheme = getTheme(THEME.LIGHT);
+    const checked = defaultTheme === THEME.LIGHT;
+    handleSwitch(checked);
+  }, []);
+
+  return (
+    <div>
+      <button onClick={() => handleSwitch(!checked)}>Btn</button>Button
+    </div>
+  );
 };
 
 export default Theme;
