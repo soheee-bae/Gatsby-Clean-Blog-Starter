@@ -14,7 +14,7 @@ export class Layout extends React.Component {
         <div className="container">
           <Navbar />
           <div className="innerContainer">
-            <div className="content" >
+            <div className="content">
               <Theme />
               {children}
             </div>
