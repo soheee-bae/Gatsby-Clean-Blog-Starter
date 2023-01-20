@@ -9,13 +9,14 @@ body {
   padding: 0;
   height: 100%;
   font-family: "Open Sans", sans-serif;
+  background-color: var(--lg-white);
   // -webkit-text-size-adjust: antialiased;
   // -moz-osx-font-smoothing: grayscale;
   // transition: background-color 0.3s, color 0.3s;
 }
 
 hr {
-  border: 1px solid var(--lightest-gray);
+  border: 1px solid var(--lg-lightest-gray);
   width: 100%;
 }
 

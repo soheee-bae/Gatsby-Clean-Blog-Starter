@@ -25,9 +25,9 @@ export function setValueTo(storage, key, data) {
 }
 
 export const getFromLocal = (key) => {
-  getValueFrom(localStorage, key);
+  return getValueFrom(localStorage, key);
 };
 
 export const setToLocal = (key, value) => {
-  setValueTo(localStorage, key, value);
+  return setValueTo(localStorage, key, value);
 };

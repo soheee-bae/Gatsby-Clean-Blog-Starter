@@ -10,14 +10,14 @@
 
 .itemTitle {
   margin: 0;
-  color: var(--light-black);
+  color: var(--lg-light-black);
 }
 
 .itemText {
   line-height: 1.3rem;
   height: 100%;
   overflow: hidden;
-  color: var(--darkest-gray);
+  color: var(--lg-darkest-gray);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
