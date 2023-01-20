@@ -1,60 +1,27 @@
 :root {
-    --white: #ffffff;
-    --black: #000000;
+  /** Light Theme **/
+  --black: #000000;
+  --light-black: #212529;
+  --lg-darkest-gray: #343a40;
+  --lg-darker-gray: #495057;
+  --lg-dark-gray: #6c757d;
+  --lg-normal-gray: #adb5bd;
+  --lg-light-gray: #ced4da;
+  --lg-lighter-gray: #dee2e6;
+  --lg-lightest-gray: #e9ecef;
+  --lg-darker-white: #f8f9fa;
+  --lg--white: #ffffff;
 
-    --light-black : #212529;
-    --darkest-gray: #343a40;
-    --darker-gray:#495057;
-    --dark-gray : #6c757d;
-    --normal-gray : #adb5bd;
-    --light-gray : #ced4da;
-    --lighter-gray : #dee2e6;
-    --lightest-gray :#e9ecef;
-    --darker-white: #f8f9fa;
-
-
-}
-
-.white {
-    color: var(--white);
-}
-
-.black {
-    color: var(--black);
-}
-
-.light-black {
-    color: var(--light-black);
-}
-
-.darkest-gray {
-    color: var(--darkest-gray);
-}
-
-.darker-gray {
-    color: var(--darker-gray);
-}
-
-.dark-gray {
-    color: var(--dark-gray);
-}
-
-.normal-gray {
-    color: var(--normal-gray);
-}
-
-.light-gray {
-    color: var(--light-gray);
-}
-
-.lighter-gray {
-    color: var(--lighter-gray);
-}
-
-.lightest-gray {
-    color: var(--lightest-gray);
-}
-
-.darker-white {
-    color: var(--darker-white);
+  /** Dark Theme **/
+  --dk-black: #000000;
+  --dk-light-black: #212529;
+  --dk-darkest-gray: #343a40;
+  --dk-darker-gray: #495057;
+  --dk-dark-gray: #6c757d;
+  --dk-normal-gray: #adb5bd;
+  --dk-light-gray: #ced4da;
+  --dk-lighter-gray: #dee2e6;
+  --dk-lightest-gray: #e9ecef;
+  --dk-darker-white: #f8f9fa;
+  --dk-white: #ffffff;
 }

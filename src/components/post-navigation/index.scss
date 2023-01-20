@@ -16,8 +16,8 @@
 
   padding: 10px 12px;
   border-radius: 8px;
-  background-color: var(--darker-white);
-  color: var(--darker-gray);
+  background-color: var(--lg-darker-white);
+  color: var(--lg-darker-gray);
   font-size: var(--text-sm);
 
   display: flex;
@@ -29,7 +29,7 @@
   svg {
     width: 24px;
     height: 24px;
-    color: var(--darker-gray);
+    color: var(--lg-darker-gray);
     stroke-width: 2;
   }
 }
