@@ -17,7 +17,12 @@ export default function Home() {
         <Bio />
         <hr />
         <ContentList />
-        <Pagination />
+        <Pagination
+          totalCount={20}
+          siblingCount={1}
+          currentPage={3}
+          pageSize={5}
+        />
       </div>
     </Layout>
   );
