@@ -3,8 +3,14 @@ import "./index.scss";
 
 import { StaticQuery, graphql } from "gatsby";
 import { ContentItem } from "../content-Item";
+import { Pagination } from "../pagination";
 
 const ContentList = () => {
+  let currentPage = 1;
+  const handlePageChange = (current) => {
+    currentPage = current;
+  };
+
   return (
     <StaticQuery
       query={contentListQuery}
@@ -12,10 +18,19 @@ const ContentList = () => {
         const posts = data.allMarkdownRemark.edges;
 
         return (
-          <div className="listContainer">
-            {posts.map((post) => (
-              <ContentItem post={post} />
-            ))}
+          <div>
+            <div className="listContainer">
+              {posts.map((post) => (
+                <ContentItem post={post} />
+              ))}
+            </div>
+            <Pagination
+              handlePageChange={handlePageChange}
+              totalCount={posts.length}
+              siblingCount={1}
+              currentPage={currentPage}
+              pageSize={5}
+            />
           </div>
         );
       }}
