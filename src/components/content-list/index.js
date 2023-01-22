@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 
 import { StaticQuery, graphql } from "gatsby";
 import { ContentItem } from "../content-Item";
 import { Pagination } from "../pagination";
 
+const SiblingCount = 1;
+const PageSize = 5;
+
 const ContentList = () => {
-  let currentPage = 1;
-  const handlePageChange = (current) => {
-    currentPage = current;
-  };
+  const [currentPage, setCurrentPage] = useState(1);
 
   return (
     <StaticQuery
       query={contentListQuery}
       render={(data) => {
-        const posts = data.allMarkdownRemark.edges;
+        const allPosts = data.allMarkdownRemark.edges;
+        const firstPageIndex = (currentPage - 1) * PageSize;
+        const lastPageIndex = firstPageIndex + PageSize;
+        let posts = allPosts.slice(firstPageIndex, lastPageIndex);
 
         return (
           <div>
@@ -25,11 +28,11 @@ const ContentList = () => {
               ))}
             </div>
             <Pagination
-              handlePageChange={handlePageChange}
-              totalCount={posts.length}
-              siblingCount={1}
+              handlePageChange={(newCurrent) => setCurrentPage(newCurrent)}
+              totalCount={allPosts.length}
+              siblingCount={SiblingCount}
               currentPage={currentPage}
-              pageSize={5}
+              pageSize={PageSize}
             />
           </div>
         );

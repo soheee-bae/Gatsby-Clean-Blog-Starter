@@ -1,4 +1,6 @@
+@import "../../styles/size.scss";
+
 .listContainer {
   padding: 0;
+  height: $contentList-height;
 }
-

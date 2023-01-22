@@ -38,6 +38,7 @@
   }
   &[data-disabled="true"] {
     cursor: auto;
+    pointer-events: none;
     svg {
       color: var(--lg-normal-gray);
     }

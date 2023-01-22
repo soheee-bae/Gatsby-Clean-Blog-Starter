@@ -1,5 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
+import "./index.scss";
 
 const Title = () => {
   return (
@@ -7,7 +8,7 @@ const Title = () => {
       query={titleQuery}
       render={(data) => {
         const { title } = data.site.siteMetadata;
-        return <div className="h1">{title}</div>;
+        return <div className="title">{title}</div>;
       }}
     />
   );

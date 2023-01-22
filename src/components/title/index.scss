@@ -1,0 +1,7 @@
+@import "../../styles//typography";
+
+.title {
+  @extend .h1;
+  margin-bottom: 15px;
+  white-space: nowrap;
+}
