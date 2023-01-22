@@ -18,9 +18,9 @@ export default function Home() {
         <hr />
         <ContentList />
         <Pagination
-          totalCount={20}
+          totalCount={100}
           siblingCount={1}
-          currentPage={3}
+          currentPage={1}
           pageSize={5}
         />
       </div>

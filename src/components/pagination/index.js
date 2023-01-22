@@ -1,5 +1,7 @@
 import React from "react";
-import { usePagination } from "../../hooks/usePagination";
+import { ArrowLeft } from "../../../assets/icons/arrowLeft";
+import { ArrowRight } from "../../../assets/icons/arrowRight";
+import { DOTS, usePagination } from "../../hooks/usePagination";
 import "./index.scss";
 
 export const Pagination = (props) => {
@@ -10,6 +12,36 @@ export const Pagination = (props) => {
     siblingCount,
     pageSize,
   });
-  console.log(paginationRange);
-  return <div className="pagination"></div>;
+  let lastPage = paginationRange[paginationRange.length - 1];
+
+  return (
+    <div className="pagination">
+      <ul className="paginationButtons">
+        <li className="paginationArrow" data-disabled={currentPage === 1}>
+          <ArrowLeft />
+        </li>
+        <ul className="paginationPages">
+          {paginationRange.map((page) => {
+            if (page === DOTS) {
+              return <li className="paginationDots">&#8230;</li>;
+            }
+            return (
+              <li
+                className="paginationPage"
+                data-current={page === currentPage}
+              >
+                {page}
+              </li>
+            );
+          })}
+        </ul>
+        <li
+          className="paginationArrow"
+          data-disabled={currentPage === lastPage}
+        >
+          <ArrowRight />
+        </li>
+      </ul>
+    </div>
+  );
 };
