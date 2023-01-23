@@ -14,7 +14,6 @@ export const Navbar = () => {
         const edges = data.allDirectory.edges;
         const rootDirectories = [];
         const subDirectories = [];
-
         edges.forEach((dir) => {
           const { relativeDirectory, relativePath, name } = dir.node;
           if (relativeDirectory === "" && relativePath !== "") {

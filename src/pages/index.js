@@ -4,19 +4,46 @@ import { Layout } from "../layout";
 import Bio from "../components/bio";
 import ContentList from "../components/content-list";
 import Title from "../components/title";
+import { graphql } from "gatsby";
 
 import "../styles/_typography.scss";
 import "./index.scss";
 
-export default function Home() {
+export default function Page({ data }) {
+  const posts = data.allMarkdownRemark.edges;
   return (
     <Layout>
       <div className="homeContainer">
         <Title />
         <Bio />
         <hr />
-        <ContentList />
+        <ContentList posts={posts} />
       </div>
     </Layout>
   );
 }
+
+export const pageQuery = graphql`
+  query PageQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { category: { ne: "null" } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            category
+          }
+          internal {
+            content
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
