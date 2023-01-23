@@ -21,7 +21,27 @@ export const Navbar = () => {
           }
         });
 
-        return <div className="navbar"></div>;
+        return (
+          <div className="navbar">
+            {rootDirectories.map((root) => (
+              <div className="navContainer">
+                <Link to={`/${root.node.relativePath}`} className="navList">
+                  {root.node.name}
+                </Link>
+
+                {subDirectories.map((sub) => (
+                  <div>
+                    {root.node.name === sub.node.relativeDirectory && (
+                      <Link to={`/${sub.node.relativePath}`}>
+                        {sub.node.name}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        );
       }}
     />
   );
