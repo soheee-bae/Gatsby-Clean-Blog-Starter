@@ -1,27 +1,11 @@
 import React from "react";
 import "./index.scss";
-import qs from "query-string";
 
 import { StaticQuery, graphql } from "gatsby";
+import { useCategory } from "../../hooks/useCategory";
 
 export const Navbar = () => {
-  const handleSelect = (link) => {
-    const { name } = link;
-    window.history.pushState(
-      { name },
-      "",
-      `${window.location.pathname}?${qs.stringify({ name })}`
-    );
-  };
-
-  const handleSubSelect = (link) => {
-    const { relativePath } = link;
-    window.history.pushState(
-      { relativePath },
-      "",
-      `${window.location.pathname}?${qs.stringify({ relativePath })}`
-    );
-  };
+  const { handleSelect } = useCategory();
 
   return (
     <StaticQuery
@@ -32,11 +16,11 @@ export const Navbar = () => {
         const subDirectories = [];
 
         edges.forEach((dir) => {
-          const { relativeDirectory, relativePath } = dir.node;
+          const { relativeDirectory, relativePath, name } = dir.node;
           if (relativeDirectory === "" && relativePath !== "") {
-            rootDirectories.push(dir);
+            rootDirectories.push(name);
           } else if (relativeDirectory !== "" && relativePath.includes("/")) {
-            subDirectories.push(dir);
+            subDirectories.push(dir.node);
           }
         });
 
@@ -44,15 +28,15 @@ export const Navbar = () => {
           <div className="navbar">
             {rootDirectories.map((root) => (
               <div className="navContainer">
-                <ul onClick={() => handleSelect(root.node)} className="navList">
-                  {root.node.name}
+                <ul onClick={() => handleSelect(root)} className="navList">
+                  {root}
                 </ul>
 
                 {subDirectories.map((sub) => (
                   <div>
-                    {root.node.name === sub.node.relativeDirectory && (
-                      <li onClick={() => handleSubSelect(sub.node)}>
-                        {sub.node.name}
+                    {root === sub.relativeDirectory && (
+                      <li onClick={() => handleSelect(sub.relativePath)}>
+                        {sub.name}
                       </li>
                     )}
                   </div>
