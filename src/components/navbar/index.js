@@ -1,9 +1,28 @@
 import React from "react";
 import "./index.scss";
+import qs from "query-string";
+
 import { StaticQuery, graphql } from "gatsby";
-import { Link } from "gatsby";
 
 export const Navbar = () => {
+  const handleSelect = (link) => {
+    const { name } = link;
+    window.history.pushState(
+      { name },
+      "",
+      `${window.location.pathname}?${qs.stringify({ name })}`
+    );
+  };
+
+  const handleSubSelect = (link) => {
+    const { relativePath } = link;
+    window.history.pushState(
+      { relativePath },
+      "",
+      `${window.location.pathname}?${qs.stringify({ relativePath })}`
+    );
+  };
+
   return (
     <StaticQuery
       query={navQuery}
@@ -25,16 +44,16 @@ export const Navbar = () => {
           <div className="navbar">
             {rootDirectories.map((root) => (
               <div className="navContainer">
-                <Link to={`/${root.node.relativePath}`} className="navList">
+                <ul onClick={() => handleSelect(root.node)} className="navList">
                   {root.node.name}
-                </Link>
+                </ul>
 
                 {subDirectories.map((sub) => (
                   <div>
                     {root.node.name === sub.node.relativeDirectory && (
-                      <Link to={`/${sub.node.relativePath}`}>
+                      <li onClick={() => handleSubSelect(sub.node)}>
                         {sub.node.name}
-                      </Link>
+                      </li>
                     )}
                   </div>
                 ))}
