@@ -1,7 +1,6 @@
 ---
 title: "cat"
 date: 2020-07-02 16:21:13
-category: "cat"
 ---
 
 Category Test 1_1:

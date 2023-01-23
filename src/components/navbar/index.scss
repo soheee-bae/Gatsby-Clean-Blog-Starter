@@ -1,15 +1,19 @@
-@import '../../styles/colors';
-@import '../../styles/mixins';
-@import '../../styles/size';
+@import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/size";
 
-.navbar{
-    background-color: var(--lg-darker-white);
-    min-width: 100vw !important;
-    max-height: $navbar-height-smallScreen !important;
-    @include md {
-        position: absolute;
-        min-width: $navbar-width-bigScreen !important;
-        min-height: 100% !important;
-      
-    }
+.navbar {
+  background-color: var(--lg-darker-white);
+  min-width: 100vw !important;
+  max-height: $navbar-height-smallScreen !important;
+  @include md {
+    position: absolute;
+    min-width: $navbar-width-bigScreen !important;
+    min-height: 100% !important;
+  }
+}
+
+.navContainer {
+  border: 1px solid red;
+  height: 100%;
 }
