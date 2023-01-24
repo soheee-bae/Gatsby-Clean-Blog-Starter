@@ -5,10 +5,9 @@ import { useCategory } from "./useCategory";
 
 export const usePosts = ({ posts }) => {
   const { selectedCategory } = useCategory();
-  const { category } = qs.parse(window.location.search);
-  const splitedSearch = category?.split("/");
 
-  const isRootDirectory = splitedSearch.length <= 1;
+  const splitedSearch = selectedCategory?.split("/");
+  const isRootDirectory = splitedSearch?.length <= 1;
 
   const filteredPosts = useMemo(
     () =>
@@ -16,11 +15,11 @@ export const usePosts = ({ posts }) => {
         let slug = node.fields.slug;
         let splitedSlug = slug?.split("/").filter(Boolean);
         return (
-          category === CATEGORY.ALL ||
-          (isRootDirectory && splitedSearch[0] === splitedSlug[0]) ||
+          selectedCategory === CATEGORY.ALL ||
+          (isRootDirectory && splitedSearch?.[0] === splitedSlug[0]) ||
           (!isRootDirectory &&
-            splitedSearch[0] === splitedSlug[0] &&
-            slug.includes(category))
+            splitedSearch?.[0] === splitedSlug[0] &&
+            slug.includes(selectedCategory))
         );
       }),
     [selectedCategory]
