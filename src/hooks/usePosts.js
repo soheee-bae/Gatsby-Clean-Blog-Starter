@@ -1,6 +1,5 @@
-import { useEffect, useState, useMemo } from "react";
+import { useMemo } from "react";
 import { CATEGORY } from "../constants/category";
-import qs from "query-string";
 import { useCategory } from "./useCategory";
 
 export const usePosts = ({ posts }) => {
