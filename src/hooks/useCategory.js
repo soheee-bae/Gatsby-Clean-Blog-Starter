@@ -3,10 +3,11 @@ import { CATEGORY } from "../constants/category";
 import qs from "query-string";
 
 export const useCategory = () => {
-  const [category, setCategory] = useState(CATEGORY.ALL);
+  const [selectedCategory, setSelectedCategory] = useState(CATEGORY.ALL);
+  const search = window.location.search;
 
   const handleSelect = useCallback((category) => {
-    setCategory(category);
+    setSelectedCategory(category);
     window.history.pushState(
       { category },
       "",
@@ -15,9 +16,9 @@ export const useCategory = () => {
   }, []);
 
   useEffect(() => {
-    const { category } = qs.parse(window.location.search);
-    setCategory(category);
-  }, [window.location.search]);
+    const { category } = qs.parse(search);
+    setSelectedCategory(category);
+  }, [search]);
 
-  return { category, handleSelect };
+  return { selectedCategory, handleSelect };
 };

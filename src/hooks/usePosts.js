@@ -1,8 +1,10 @@
 import { useEffect, useState, useMemo } from "react";
 import { CATEGORY } from "../constants/category";
 import qs from "query-string";
+import { useCategory } from "./useCategory";
 
 export const usePosts = ({ posts }) => {
+  const { selectedCategory } = useCategory();
   const { category } = qs.parse(window.location.search);
   const splitedSearch = category?.split("/");
 
@@ -13,9 +15,6 @@ export const usePosts = ({ posts }) => {
       posts.filter(({ node }) => {
         let slug = node.fields.slug;
         let splitedSlug = slug?.split("/").filter(Boolean);
-
-        console.log(slug);
-        console.log(slug.includes(category));
         return (
           category === CATEGORY.ALL ||
           (isRootDirectory && splitedSearch[0] === splitedSlug[0]) ||
@@ -24,13 +23,8 @@ export const usePosts = ({ posts }) => {
             slug.includes(category))
         );
       }),
-    [category]
+    [selectedCategory]
   );
 
   return { filteredPosts };
 };
-
-// ({ node }) =>
-// category === CATEGORY.ALL || (isRootDirectory && splitedSearch[0] === )
-// )
-// .slice(0, count * countOfInitialPost)

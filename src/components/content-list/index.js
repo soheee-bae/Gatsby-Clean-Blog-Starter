@@ -12,12 +12,12 @@ const PageSize = 5;
 
 const ContentList = ({ posts }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  // const { category } = useCategory();
-
   const { filteredPosts } = usePosts({ posts });
+
   const firstPageIndex = (currentPage - 1) * PageSize;
   const lastPageIndex = firstPageIndex + PageSize;
   let finalPosts = filteredPosts.slice(firstPageIndex, lastPageIndex);
+
   return (
     <div>
       <div className="listContainer">
@@ -27,7 +27,7 @@ const ContentList = ({ posts }) => {
       </div>
       <Pagination
         handlePageChange={(newCurrent) => setCurrentPage(newCurrent)}
-        totalCount={finalPosts.length}
+        totalCount={filteredPosts.length}
         siblingCount={SiblingCount}
         currentPage={currentPage}
         pageSize={PageSize}

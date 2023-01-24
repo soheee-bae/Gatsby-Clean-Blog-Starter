@@ -2,11 +2,8 @@ import React from "react";
 import "./index.scss";
 
 import { StaticQuery, graphql } from "gatsby";
-import { useCategory } from "../../hooks/useCategory";
 
-export const Navbar = () => {
-  const { handleSelect } = useCategory();
-
+export const Navbar = ({ handleSelect }) => {
   return (
     <StaticQuery
       query={navQuery}
