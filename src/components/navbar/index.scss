@@ -2,8 +2,19 @@
 @import "../../styles/mixins";
 @import "../../styles/size";
 
+@import "../../styles/typography";
+
 .navbar {
   background-color: var(--lg-darker-white);
   min-height: $navbar-height;
   width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.blogName {
+  @extend .h4;
+  margin-left: 20px;
+  color: var(--lg-light-black);
+  text-decoration: none;
 }

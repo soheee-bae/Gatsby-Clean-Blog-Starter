@@ -2,7 +2,6 @@ import React from "react";
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
 import Theme from "../components/theme";
-import { useCategory } from "../hooks/useCategory";
 
 import "./index.scss";
 
