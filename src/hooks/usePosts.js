@@ -4,7 +4,6 @@ import { useCategory } from "./useCategory";
 
 export const usePosts = ({ posts }) => {
   const { selectedCategory } = useCategory();
-
   const splitedSearch = selectedCategory?.split("/");
   const isRootDirectory = splitedSearch?.length <= 1;
 

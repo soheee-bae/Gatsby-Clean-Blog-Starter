@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { CATEGORY } from "../constants/category";
 import qs from "query-string";
 
@@ -7,14 +7,14 @@ export const useCategory = () => {
   const search = window.location.search;
   const pathname = window.location.pathname;
 
-  const handleSelect = useCallback((category) => {
+  const handleSelect = (category) => {
     setSelectedCategory(category);
     window.history.pushState(
       { category },
       "",
       `${window.location.pathname}?${qs.stringify({ category })}`
     );
-  }, []);
+  };
 
   useEffect(() => {
     const { category } = qs.parse(search);
@@ -23,7 +23,7 @@ export const useCategory = () => {
     } else {
       setSelectedCategory(category);
     }
-  }, [search]);
+  }, []);
 
   return { selectedCategory, handleSelect };
 };

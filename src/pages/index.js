@@ -8,14 +8,12 @@ import { graphql } from "gatsby";
 
 import "../styles/_typography.scss";
 import "./index.scss";
-import { useCategory } from "../hooks/useCategory";
 
 export default function Page({ data }) {
-  const { handleSelect } = useCategory();
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <Layout handleSelect={handleSelect}>
+    <Layout>
       <div className="homeContainer">
         <Title />
         <Bio />

@@ -6,18 +6,16 @@ import { useCategory } from "../hooks/useCategory";
 
 import "./index.scss";
 
-export const Layout = ({ children, handleSelect }) => {
+export const Layout = ({ children }) => {
   return (
     <React.Fragment>
       <div className="container">
-        <Navbar handleSelect={handleSelect} />
-        <div className="innerContainer">
-          <div className="content">
-            <Theme />
-            {children}
-          </div>
-          <Footer />
+        <Navbar />
+        <div className="content">
+          <Theme />
+          {children}
         </div>
+        <Footer />
       </div>
     </React.Fragment>
   );

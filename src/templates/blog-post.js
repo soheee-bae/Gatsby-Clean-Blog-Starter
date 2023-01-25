@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import React from "react";
+import React, { useCallback } from "react";
 import PostContent from "../components/post-content";
 import PostHeader from "../components/post-header";
 import Bio from "../components/bio";
