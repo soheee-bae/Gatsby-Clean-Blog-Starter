@@ -1,5 +1,6 @@
 import React from "react";
 import { Footer } from "../components/footer";
+import { Menu } from "../components/menu";
 import { Navbar } from "../components/navbar";
 import Theme from "../components/theme";
 
@@ -11,7 +12,11 @@ export const Layout = ({ children }) => {
       <div className="container">
         <Navbar />
         <div className="content">
-          <Theme />
+          <div className="header">
+            <Theme />
+            <Menu />
+          </div>
+
           {children}
         </div>
         <Footer />
