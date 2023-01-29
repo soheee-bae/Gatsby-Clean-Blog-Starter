@@ -1,12 +1,17 @@
 import React from "react";
 import "./index.scss";
-import { Link } from "gatsby";
-import { StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql, Link } from "gatsby";
 import { navigation } from "../../constants";
 import { useCategory } from "../../hooks/useCategory";
 
 export const Navbar = () => {
   const { handleSelect } = useCategory();
+
+  const handleClick = (e, link) => {
+    e.preventDefault();
+    e.stopPropagation();
+    handleSelect(link.toLowerCase());
+  };
 
   const RecursiveNav = ({ data }) => {
     return (
@@ -21,11 +26,6 @@ export const Navbar = () => {
     );
   };
 
-  const handleClick = (e, link) => {
-    e.preventDefault();
-    e.stopPropagation();
-    handleSelect(link);
-  };
   return (
     <StaticQuery
       query={navQuery}

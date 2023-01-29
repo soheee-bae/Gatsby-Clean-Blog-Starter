@@ -10,8 +10,9 @@ export const usePosts = ({ posts }) => {
   const filteredPosts = useMemo(
     () =>
       posts.filter(({ node }) => {
-        let slug = node.fields.slug;
+        let slug = node.fields.slug.toLowerCase();
         let splitedSlug = slug?.split("/").filter(Boolean);
+
         return (
           selectedCategory === CATEGORY.ALL ||
           (isRootDirectory && splitedSearch?.[0] === splitedSlug[0]) ||

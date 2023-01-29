@@ -1,6 +1,6 @@
 export const navigation = [
   {
-    title: "category1",
+    title: "first",
     link: "category1",
     children: [
       {
@@ -19,7 +19,7 @@ export const navigation = [
           },
           {
             title: "projectsub2",
-            link: "category1/project/projectsub2",
+            link: "CAtegory1/project/projectsub2",
             children: [
               {
                 title: "subsub1",

@@ -1,10 +1,7 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import "./index.scss";
-import qs from "query-string";
-import { StaticQuery, graphql } from "gatsby";
 import { ContentItem } from "../content-Item";
 import { Pagination } from "../pagination";
-import { useCategory } from "../../hooks/useCategory";
 import { usePosts } from "../../hooks/usePosts";
 
 const SiblingCount = 1;

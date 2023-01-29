@@ -6,21 +6,23 @@ export const useCategory = () => {
   const [selectedCategory, setSelectedCategory] = useState(CATEGORY.ALL);
   const search = window.location.search;
   const pathname = window.location.pathname;
+  const isHome = pathname === "/";
 
   const handleSelect = (category) => {
     if (category.charAt(0) === "/") category = category.substring(1);
-
     setSelectedCategory(category);
+    
+    const pathname = !search && !isHome ? `/` : `${window.location.pathname}`;
     window.history.pushState(
       { category },
       "",
-      `${window.location.pathname}?${qs.stringify({ category })}`
+      `${pathname}?${qs.stringify({ category })}`
     );
   };
 
   useEffect(() => {
     const { category } = qs.parse(search);
-    if (!search && pathname === "/") {
+    if (!search && isHome) {
       setSelectedCategory(CATEGORY.ALL);
     } else {
       setSelectedCategory(category);
