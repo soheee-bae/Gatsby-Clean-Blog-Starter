@@ -1,6 +1,5 @@
 import React from "react";
 import { Footer } from "../components/footer";
-import { Menu } from "../components/menu";
 import { Navbar } from "../components/navbar";
 import Theme from "../components/theme";
 
@@ -11,15 +10,13 @@ export const Layout = ({ children }) => {
     <React.Fragment>
       <div className="container">
         <Navbar />
-        <div className="content">
-          <div className="header">
+        <div className="innerContainer">
+          <div className="content">
             <Theme />
-            <Menu />
+            {children}
           </div>
-
-          {children}
+          <Footer />
         </div>
-        <Footer />
       </div>
     </React.Fragment>
   );

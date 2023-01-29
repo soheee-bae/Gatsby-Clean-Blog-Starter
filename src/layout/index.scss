@@ -2,7 +2,7 @@
 @import "../styles/size";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
-$height: calc(100vh - $navbar-height - $footer-height);
+$height: calc(100vh - $navbar-height-smallScreen);
 
 body {
   margin: 0;
@@ -21,22 +21,29 @@ hr {
 }
 
 .container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  @include md {
+    flex-direction: row;
+  }
+}
+
+.innerContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  min-height: $height;
   width: 100%;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include md {
+    margin-left: $navbar-width-bigScreen;
+  }
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
-  min-height: $height;
+  padding-top: 100px;
 }
