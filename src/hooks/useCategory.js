@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CATEGORY } from "../constants/category";
+import { CATEGORY } from "../constants";
 import qs from "query-string";
 
 export const useCategory = () => {
@@ -8,6 +8,8 @@ export const useCategory = () => {
   const pathname = window.location.pathname;
 
   const handleSelect = (category) => {
+    if (category.charAt(0) === "/") category = category.substring(1);
+
     setSelectedCategory(category);
     window.history.pushState(
       { category },
