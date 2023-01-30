@@ -1,34 +1,39 @@
 export const navigation = [
   {
-    title: "first",
+    title: "First",
     link: "category1",
     children: [
       {
-        title: "code",
+        title: "Code",
         link: "category1/code",
         children: [],
       },
       {
-        title: "project",
+        title: "Project",
         link: "category1/project",
         children: [
           {
-            title: "projectsub",
+            title: "Projectsub",
             link: "category1/project/projectsub",
             children: [],
           },
           {
-            title: "projectsub2",
+            title: "Projectsub2",
             link: "CAtegory1/project/projectsub2",
             children: [
               {
-                title: "subsub1",
+                title: "Subsub1",
                 link: "category1/project/projectsub2/subsub1",
                 children: [],
               },
               {
                 title: "subsub2",
                 link: "category1/project/projectsub2/subsub2",
+                children: [],
+              },
+              {
+                title: "subsub3",
+                link: "category1/project/projectsub2/subsub3",
                 children: [],
               },
             ],

@@ -5,11 +5,14 @@ import Theme from "../components/theme";
 
 import "./index.scss";
 
-export const Layout = ({ children, handleSelect }) => {
+export const Layout = ({ children, selectedCategory, handleSelect }) => {
   return (
     <React.Fragment>
       <div className="container">
-        <Navbar handleSelect={handleSelect} />
+        <Navbar
+          handleSelect={handleSelect}
+          selectedCategory={selectedCategory}
+        />
         <div className="innerContainer">
           <div className="content">
             <Theme />

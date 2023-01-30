@@ -27,48 +27,38 @@
 .navLists {
   padding: 30px;
   > div > div > div:first-child {
-    font-size: var(--text-lg);
-    font-weight: var(--font-semibold);
-    margin-top: 15px;
+    padding: 10px 0;
     color: var(--lg-light-black);
+    font-size: var(--text-md);
+    font-weight: var(--font-semibold);
+    border-bottom: 1px solid var(--lg-lighter-gray);
   }
-
   > div > div > div:not(:first-child) {
-    margin-left: 10px;
     color: var(--lg-darkest-gray);
-  }
-}
-
-.navTitle {
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navList {
-  > div > div > div:first-child {
-    margin-top: 5px;
+    padding: 5px 0 0 15px;
   }
 }
 
 .navDetail {
   > div > div > div:not(:first-child) {
-    margin-left: 15px;
     color: var(--lg-darkest-gray);
-    // margin-top: 5px;
+    padding-left: 15px;
   }
 }
 
-.navArrow {
-  svg {
-    width: 16px;
-    height: 16px;
-    stroke-width: 3;
-    color: var(--lg-darkest-gray);
+.navTitle {
+  cursor: pointer;
+}
 
-    transition: 0.2s ease-in-out;
-    transform-origin: center;
+p {
+  margin: 0;
+  width: 100%;
+  padding: 5px 0;
+  &[data-show="true"] {
+    font-weight: var(--font-semibold);
   }
+}
+
+p:hover {
+  text-decoration: underline;
 }

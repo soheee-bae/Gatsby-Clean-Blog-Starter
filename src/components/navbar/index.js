@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import { StaticQuery, graphql, Link } from "gatsby";
-import { navigation } from "../../constants";
-import { ArrowDown } from "../../../assets/icons/arrowDown";
+import { CATEGORY, navigation } from "../../constants";
 
-export const Navbar = ({ handleSelect }) => {
+export const Navbar = ({ handleSelect, selectedCategory }) => {
+  const [show, setShow] = useState(CATEGORY.ALL);
+
   const handleClick = (e, link) => {
+    setShow(link);
     e.preventDefault();
     e.stopPropagation();
     handleSelect(link.toLowerCase());
@@ -14,24 +16,22 @@ export const Navbar = ({ handleSelect }) => {
   const RecursiveNav = ({ data }) => {
     return (
       <div className="navList">
-        {data.map((parent) => (
-          <div
-            className="navDetail"
-            onClick={(e) => handleClick(e, parent.link)}
-          >
-            <div className="navTitle">
-              {parent.title}
+        {data.map((parent) => {
+          const isShow = parent.link === show;
+          return (
+            <div
+              className="navDetail"
+              onClick={(e) => handleClick(e, parent.link)}
+            >
+              <div className="navTitle">
+                <p data-show={isShow}>{parent.title}</p>
+              </div>
               {parent.children.length > 0 && (
-                <div className="navArrow">
-                  <ArrowDown />
-                </div>
+                <RecursiveNav data={parent.children} />
               )}
             </div>
-            {parent.children.length > 0 && (
-              <RecursiveNav data={parent.children} />
-            )}
-          </div>
-        ))}
+          );
+        })}
       </div>
     );
   };

@@ -11,10 +11,10 @@ import PostNavigation from "../components/post-navigation";
 const BlogPost = ({ data, pageContext }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-  const { handleSelect } = useCategory();
+  const { handleSelect, selectedCategory } = useCategory();
 
   return (
-    <Layout handleSelect={handleSelect}>
+    <Layout handleSelect={handleSelect} selectedCategory={selectedCategory}>
       <div className="templateContainer">
         <PostHeader data={frontmatter} />
         <PostContent content={html} />

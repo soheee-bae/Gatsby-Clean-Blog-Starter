@@ -12,9 +12,9 @@ import { useCategory } from "../hooks/useCategory";
 
 export default function Page({ data }) {
   const posts = data.allMarkdownRemark.edges;
-  const { handleSelect } = useCategory();
+  const { handleSelect, selectedCategory } = useCategory();
   return (
-    <Layout handleSelect={handleSelect}>
+    <Layout handleSelect={handleSelect} selectedCategory={selectedCategory}>
       <div className="homeContainer">
         <Title />
         <Bio />
