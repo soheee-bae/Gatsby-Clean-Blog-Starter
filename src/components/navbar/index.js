@@ -2,6 +2,7 @@ import React from "react";
 import "./index.scss";
 import { StaticQuery, graphql, Link } from "gatsby";
 import { navigation } from "../../constants";
+import { ArrowDown } from "../../../assets/icons/arrowDown";
 
 export const Navbar = ({ handleSelect }) => {
   const handleClick = (e, link) => {
@@ -12,14 +13,26 @@ export const Navbar = ({ handleSelect }) => {
 
   const RecursiveNav = ({ data }) => {
     return (
-      <ul>
+      <div className="navList">
         {data.map((parent) => (
-          <li onClick={(e) => handleClick(e, parent.link)}>
-            {parent.title}
-            {parent.children && <RecursiveNav data={parent.children} />}
-          </li>
+          <div
+            className="navDetail"
+            onClick={(e) => handleClick(e, parent.link)}
+          >
+            <div className="navTitle">
+              {parent.title}
+              {parent.children.length > 0 && (
+                <div className="navArrow">
+                  <ArrowDown />
+                </div>
+              )}
+            </div>
+            {parent.children.length > 0 && (
+              <RecursiveNav data={parent.children} />
+            )}
+          </div>
         ))}
-      </ul>
+      </div>
     );
   };
 
@@ -30,10 +43,12 @@ export const Navbar = ({ handleSelect }) => {
         const { blogName } = data.site.siteMetadata;
         return (
           <div className="navbar">
-            <Link to="/" className="blogName">
+            <Link to="/" className="navName">
               {blogName}
             </Link>
-            <RecursiveNav data={navigation} />
+            <div className="navLists">
+              <RecursiveNav data={navigation} />
+            </div>
           </div>
         );
       }}

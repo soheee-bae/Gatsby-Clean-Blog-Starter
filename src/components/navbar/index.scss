@@ -8,6 +8,8 @@
   background-color: var(--lg-darker-white);
   min-width: 100vw !important;
   max-height: $navbar-height-smallScreen !important;
+  padding-top: 100px;
+
   @include md {
     position: absolute;
     min-width: $navbar-width-bigScreen !important;
@@ -15,9 +17,58 @@
   }
 }
 
-.blogName {
+.navName {
   @extend .h4;
-  margin-left: 20px;
+  margin: 30px;
   color: var(--lg-light-black);
   text-decoration: none;
+}
+
+.navLists {
+  padding: 30px;
+  > div > div > div:first-child {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-top: 15px;
+    color: var(--lg-light-black);
+  }
+
+  > div > div > div:not(:first-child) {
+    margin-left: 10px;
+    color: var(--lg-darkest-gray);
+  }
+}
+
+.navTitle {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navList {
+  > div > div > div:first-child {
+    margin-top: 5px;
+  }
+}
+
+.navDetail {
+  > div > div > div:not(:first-child) {
+    margin-left: 15px;
+    color: var(--lg-darkest-gray);
+    // margin-top: 5px;
+  }
+}
+
+.navArrow {
+  svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 3;
+    color: var(--lg-darkest-gray);
+
+    transition: 0.2s ease-in-out;
+    transform-origin: center;
+  }
 }
