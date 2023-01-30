@@ -1,9 +1,9 @@
 import { graphql } from "gatsby";
-import React, { useCallback } from "react";
+import React from "react";
 import PostContent from "../components/post-content";
 import PostHeader from "../components/post-header";
 import Bio from "../components/bio";
-
+import { useCategory } from "../hooks/useCategory";
 import { Layout } from "../layout";
 import "./blog-post.scss";
 import PostNavigation from "../components/post-navigation";
@@ -11,9 +11,10 @@ import PostNavigation from "../components/post-navigation";
 const BlogPost = ({ data, pageContext }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
+  const { handleSelect } = useCategory();
 
   return (
-    <Layout>
+    <Layout handleSelect={handleSelect}>
       <div className="templateContainer">
         <PostHeader data={frontmatter} />
         <PostContent content={html} />

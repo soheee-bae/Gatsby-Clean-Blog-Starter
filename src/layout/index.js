@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
 import Theme from "../components/theme";
 
 import "./index.scss";
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, handleSelect }) => {
   return (
     <React.Fragment>
       <div className="container">
-        <Navbar />
+        <Navbar handleSelect={handleSelect} />
         <div className="innerContainer">
           <div className="content">
             <Theme />

@@ -2,11 +2,8 @@ import React from "react";
 import "./index.scss";
 import { StaticQuery, graphql, Link } from "gatsby";
 import { navigation } from "../../constants";
-import { useCategory } from "../../hooks/useCategory";
 
-export const Navbar = () => {
-  const { handleSelect } = useCategory();
-
+export const Navbar = ({ handleSelect }) => {
   const handleClick = (e, link) => {
     e.preventDefault();
     e.stopPropagation();

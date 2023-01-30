@@ -10,7 +10,6 @@ const PageSize = 5;
 const ContentList = ({ posts }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const { filteredPosts } = usePosts({ posts });
-
   const firstPageIndex = (currentPage - 1) * PageSize;
   const lastPageIndex = firstPageIndex + PageSize;
   let finalPosts = filteredPosts.slice(firstPageIndex, lastPageIndex);

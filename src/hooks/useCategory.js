@@ -11,13 +11,16 @@ export const useCategory = () => {
   const handleSelect = (category) => {
     if (category.charAt(0) === "/") category = category.substring(1);
     setSelectedCategory(category);
-    
-    const pathname = !search && !isHome ? `/` : `${window.location.pathname}`;
-    window.history.pushState(
-      { category },
-      "",
-      `${pathname}?${qs.stringify({ category })}`
-    );
+
+    if (!search && !isHome) {
+      window.location = `/?${qs.stringify({ category })}`;
+    } else {
+      window.history.pushState(
+        { category },
+        "",
+        `${window.location.pathname}?${qs.stringify({ category })}`
+      );
+    }
   };
 
   useEffect(() => {
@@ -27,7 +30,7 @@ export const useCategory = () => {
     } else {
       setSelectedCategory(category);
     }
-  }, []);
+  }, [search]);
 
   return { selectedCategory, handleSelect };
 };
