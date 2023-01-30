@@ -1,4 +1,6 @@
 module.exports = {
+  blogName: "My Blog",
+
   title: "Gatsby Clean Starter",
   author: "[Your Name]",
   bio: "This is my bio",

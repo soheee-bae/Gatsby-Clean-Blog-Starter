@@ -1,27 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
 import Theme from "../components/theme";
 
 import "./index.scss";
 
-export class Layout extends React.Component {
-  render() {
-    const { children } = this.props;
-
-    return (
-      <React.Fragment>
-        <div className="container">
-          <Navbar />
-          <div className="innerContainer">
-            <div className="content">
-              <Theme />
-              {children}
-            </div>
-            <Footer />
+export const Layout = ({ children, selectedCategory, handleSelect }) => {
+  return (
+    <React.Fragment>
+      <div className="container">
+        <Navbar
+          handleSelect={handleSelect}
+          selectedCategory={selectedCategory}
+        />
+        <div className="innerContainer">
+          <div className="content">
+            <Theme />
+            {children}
           </div>
+          <Footer />
         </div>
-      </React.Fragment>
-    );
-  }
-}
+      </div>
+    </React.Fragment>
+  );
+};

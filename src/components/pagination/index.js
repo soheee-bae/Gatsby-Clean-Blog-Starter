@@ -12,7 +12,7 @@ export const Pagination = (props) => {
     currentPage,
     pageSize,
   } = props;
-  console.log(totalCount);
+
   const paginationRange = usePagination({
     currentPage,
     totalCount,

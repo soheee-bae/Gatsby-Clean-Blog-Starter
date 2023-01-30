@@ -1,7 +1,7 @@
 ---
 title: "category2 시작한 이유..."
 date: 2020-07-01 16:21:13
-category: "category2"
+category: "projectsub"
 ---
 
 ## 제목
