@@ -7,42 +7,65 @@
 .navbar {
   background-color: var(--lg-darker-white);
   min-width: 100vw !important;
-  max-height: $navbar-height-smallScreen !important;
-  padding-top: 100px;
-
+  height: $navbar-height-smallScreen !important;
+  display: flex;
+  align-items: center;
   @include md {
+    display: block;
     position: absolute;
     min-width: $navbar-width-bigScreen !important;
     min-height: 100% !important;
+    padding-top: 100px;
   }
 }
 
 .navName {
   @extend .h4;
-  margin: 30px;
   color: var(--lg-light-black);
   text-decoration: none;
+  margin-left: 20px;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
+  @include md {
+    margin: 30px;
+  }
 }
 
 .navLists {
-  padding: 30px;
+  display: none;
   > div > div > div:first-child {
-    padding: 10px 0;
     color: var(--lg-light-black);
     font-size: var(--text-md);
     font-weight: var(--font-semibold);
-    border-bottom: 1px solid var(--lg-lighter-gray);
   }
   > div > div > div:not(:first-child) {
     color: var(--lg-darkest-gray);
-    padding: 5px 0 0 15px;
+  }
+
+  @include md {
+    display: block;
+    padding: 30px;
+    > div > div > div:first-child {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--lg-lighter-gray);
+    }
+    > div > div > div:not(:first-child) {
+      padding: 5px 0 0 15px;
+    }
   }
 }
 
 .navDetail {
   > div > div > div:not(:first-child) {
     color: var(--lg-darkest-gray);
-    padding-left: 15px;
+  }
+  @include md {
+    > div > div > div:not(:first-child) {
+      padding-left: 15px;
+    }
   }
 }
 
@@ -57,8 +80,7 @@ p {
   &[data-show="true"] {
     font-weight: var(--font-semibold);
   }
-}
-
-p:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }
