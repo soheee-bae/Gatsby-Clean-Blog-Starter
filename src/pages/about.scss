@@ -1,0 +1,30 @@
+@import "../styles/colors";
+@import "../styles/size";
+@import "../styles/typography";
+
+.aboutRoot {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.aboutNavbar {
+  background-color: var(--lg-darker-white);
+  min-width: 100vw;
+  height: $navbar-height-smallScreen;
+}
+
+.aboutContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 50px;
+}
+
+.aboutTitle {
+  @extend .h2;
+  margin-bottom: 20px;
+  text-align: center;
+}

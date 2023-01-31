@@ -1,3 +1,7 @@
+@import "../styles/colors";
+@import "../styles/size";
+@import "../styles/typography";
+
 .errorRoot {
   height: 100vh;
   display: flex;
@@ -8,7 +12,7 @@
 .errorNavbar {
   background-color: var(--lg-darker-white);
   min-width: 100vw;
-  height: 50px;
+  height: $navbar-height-smallScreen;
 }
 
 .errorContent {
@@ -36,13 +40,13 @@
 }
 
 .errorTitle {
-  font-weight: 700;
-  font-size: 40px;
+  font-weight: var(--font-bold);
+  font-size: var(--text-4xl);
   margin-bottom: 20px;
   text-align: center;
 }
 
 .errorText {
-  font-size: 15px;
+  font-size: var(--text-base);
   margin-bottom: 50px;
 }
