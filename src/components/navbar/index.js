@@ -43,9 +43,15 @@ export const Navbar = ({ handleSelect, selectedCategory }) => {
         const { blogName } = data.site.siteMetadata;
         return (
           <div className="navbar">
-            <Link to="/" className="navName">
-              {blogName}
-            </Link>
+            {blogName}
+            <div>
+              <Link to="/" className="navItem">
+                Home
+              </Link>
+              <Link to="/" className="navItem">
+                Github
+              </Link>
+            </div>
             <div className="navLists">
               <RecursiveNav data={navigation} />
             </div>
