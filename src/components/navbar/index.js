@@ -6,13 +6,11 @@ import { CATEGORY, navigation } from "../../constants";
 export const Navbar = ({ handleSelect, selectedCategory }) => {
   const [show, setShow] = useState(CATEGORY.ALL);
 
-
-
   return (
     <StaticQuery
       query={navQuery}
       render={(data) => {
-        const { blogName } = data.site.siteMetadata;
+        const { blogName, githubUrl } = data.site.siteMetadata;
         return (
           <div className="navbar">
             {blogName}
@@ -20,12 +18,11 @@ export const Navbar = ({ handleSelect, selectedCategory }) => {
               <Link to="/" className="navItem">
                 Home
               </Link>
-              <Link to="/" className="navItem">
+              <Link to={githubUrl} className="navItem">
                 Github
               </Link>
             </div>
             <hr />
-        
           </div>
         );
       }}
@@ -37,6 +34,7 @@ const navQuery = graphql`
     site {
       siteMetadata {
         blogName
+        githubUrl
       }
     }
   }
