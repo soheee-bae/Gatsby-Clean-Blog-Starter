@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CATEGORY } from "../constants";
 import qs from "query-string";
+import { navigate } from "gatsby";
 
 export const useCategory = () => {
   const [selectedCategory, setSelectedCategory] = useState(CATEGORY.ALL);
@@ -13,7 +14,7 @@ export const useCategory = () => {
     setSelectedCategory(category);
 
     if (!search && !isHome) {
-      window.location = `/?${qs.stringify({ category })}`;
+      navigate(`/?${qs.stringify({ category })}`);
     } else {
       window.history.pushState(
         { category },
