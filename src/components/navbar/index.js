@@ -12,7 +12,7 @@ export const Navbar = ({ handlePageChange, handleSelect, currentPage }) => {
   const handleClick = (e, link) => {
     e.preventDefault();
     e.stopPropagation();
-    setShow(link);
+    setShow(link.toLowerCase());
     currentPage !== 1 && handlePageChange(1);
     handleSelect(link?.toLowerCase());
   };
@@ -36,7 +36,11 @@ export const Navbar = ({ handlePageChange, handleSelect, currentPage }) => {
               </Link>
             </div>
             <hr />
-            <NavbarList navLists={navLists} handleClick={handleClick} />
+            <NavbarList
+              show={show}
+              navLists={navLists}
+              handleClick={handleClick}
+            />
           </div>
         );
       }}

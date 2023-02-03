@@ -1,6 +1,7 @@
 .navbarListContainer {
   display: flex;
   flex-direction: column;
+  margin-top: 17px;
 }
 
 .navbarList {
@@ -11,18 +12,56 @@
   color: var(--lg-dark-gray);
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  svg {
+    height: 16px;
+    width: 16px;
+    color: var(--lg-dark-gray);
+    stroke-width: 2;
+  }
 }
 
 .navbarChildrenList {
   color: var(--lg-dark-gray);
   font-size: var(--text-sm);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-normal);
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.2s linear;
+
+  &[data-show="true"] {
+    opacity: 1;
+    max-height: 100%;
+    gap: 8px;
+    padding: 10px 0;
+    transition: all 0.2s linear;
+  }
 }
 
 .navbarChildList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
   svg {
-    height: 14px;
-    width: 14px;
+    height: 16px;
+    width: 16px;
     color: var(--lg-dark-gray);
+    stroke-width: 2;
   }
 }
+
+// &[data-show="true"] {
+//     display: block;
+//   }
+//   &[data-show="false"] {
+//     display: none;
+//   }
