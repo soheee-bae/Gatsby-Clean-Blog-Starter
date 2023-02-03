@@ -1,10 +1,10 @@
 import React from "react";
 
-export const ArrowLeft = () => {
+export const ChevronUp = () => {
   return (
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M15 18L9 12L15 6"
+        d="M18 15L12 9L6 15"
         stroke="currentColor"
         stroke-width="currentStroke"
         stroke-linecap="round"

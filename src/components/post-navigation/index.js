@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
-import { ArrowLeft } from "../../../assets/icons/arrowLeft";
-import { ArrowRight } from "../../../assets/icons/arrowRight";
 
 import "./index.scss";
+import { ChevronLeft } from "../../../assets/icons/chevronLeft";
+import { ChevronRight } from "../../../assets/icons/chevronRight";
 
 const PostNavigation = ({ data }) => {
   const { next, previous } = data;
@@ -15,7 +15,7 @@ const PostNavigation = ({ data }) => {
       <Link to={previous?.fields.slug} className="postNavLink">
         {previous && (
           <div className="postNavButton">
-            <ArrowLeft />
+            <ChevronLeft />
             {preTitle}
           </div>
         )}
@@ -24,7 +24,7 @@ const PostNavigation = ({ data }) => {
         {next && (
           <div className="postNavButton">
             {nextTitle}
-            <ArrowRight />
+            <ChevronRight />
           </div>
         )}
       </Link>

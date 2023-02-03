@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowRight } from "../../../assets/icons/arrowRight";
 import "./index.scss";
 
 export const NavbarList = ({ navLists, handleClick }) => {
@@ -26,6 +27,7 @@ export const NavbarList = ({ navLists, handleClick }) => {
                   className="navbarChildList"
                   onClick={(e) => handleClick(e, sub.node.relativePath)}
                 >
+                  <ArrowRight />
                   {sub.node.name}
                 </div>
               )}

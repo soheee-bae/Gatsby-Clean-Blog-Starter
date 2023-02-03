@@ -1,19 +1,28 @@
-.navbarListContainer{
-
+.navbarListContainer {
+  display: flex;
+  flex-direction: column;
 }
 
-.navbarList{
-
+.navbarList {
+  padding: 8px 0;
 }
 
-.navbarParentList{
-
+.navbarParentList {
+  color: var(--lg-dark-gray);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
 }
 
-.navbarChildrenList{
-
+.navbarChildrenList {
+  color: var(--lg-dark-gray);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
 }
 
-.navbarChildList{
-    
+.navbarChildList {
+  svg {
+    height: 14px;
+    width: 14px;
+    color: var(--lg-dark-gray);
+  }
 }
