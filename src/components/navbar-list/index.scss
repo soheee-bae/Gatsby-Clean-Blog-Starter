@@ -18,10 +18,16 @@
   justify-content: space-between;
   align-items: center;
   svg {
-    height: 16px;
-    width: 16px;
+    height: 18px;
+    width: 18px;
     color: var(--lg-dark-gray);
-    stroke-width: 2;
+    stroke-width: 3;
+    transition: 0.2s ease-in-out;
+  }
+  &[data-show="true"] {
+    svg {
+      rotate: 180deg;
+    }
   }
 }
 
@@ -31,17 +37,15 @@
   font-weight: var(--font-normal);
   display: flex;
   flex-direction: column;
-  max-height: 0;
+  gap: 8px;
+  height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: all 0.2s linear;
-
   &[data-show="true"] {
     opacity: 1;
-    max-height: 100%;
-    gap: 8px;
+    height: 100%;
     padding: 10px 0;
-    transition: all 0.2s linear;
+    transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
   }
 }
 
@@ -58,10 +62,3 @@
     stroke-width: 2;
   }
 }
-
-// &[data-show="true"] {
-//     display: block;
-//   }
-//   &[data-show="false"] {
-//     display: none;
-//   }

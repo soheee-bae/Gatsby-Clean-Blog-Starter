@@ -12,7 +12,15 @@ export const Navbar = ({ handlePageChange, handleSelect, currentPage }) => {
   const handleClick = (e, link) => {
     e.preventDefault();
     e.stopPropagation();
-    setShow(link.toLowerCase());
+
+    if (show === link) {
+      setShow(CATEGORY.ALL);
+    } else if (link.includes("/")) {
+      setShow(link.split("/")[0]);
+    } else {
+      setShow(link.toLowerCase());
+    }
+
     currentPage !== 1 && handlePageChange(1);
     handleSelect(link?.toLowerCase());
   };
