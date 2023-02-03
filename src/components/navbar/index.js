@@ -6,7 +6,12 @@ import { NavbarList } from "../navbar-list";
 
 import "./index.scss";
 
-export const Navbar = ({ handlePageChange, handleSelect, currentPage }) => {
+export const Navbar = ({
+  handlePageChange,
+  handleSelect,
+  selectedCategory,
+  currentPage,
+}) => {
   const [show, setShow] = useState(CATEGORY.ALL);
 
   const handleClick = (e, link) => {
@@ -39,7 +44,7 @@ export const Navbar = ({ handlePageChange, handleSelect, currentPage }) => {
               <Link to="/" className="navbarItem">
                 Home
               </Link>
-              <Link to={githubUrl} className="navbarItem">
+              <Link to={githubUrl} target="_blank" className="navbarItem">
                 Github
               </Link>
             </div>
@@ -48,6 +53,7 @@ export const Navbar = ({ handlePageChange, handleSelect, currentPage }) => {
               show={show}
               navLists={navLists}
               handleClick={handleClick}
+              selectedCategory={selectedCategory}
             />
           </div>
         );

@@ -8,6 +8,7 @@ import "./index.scss";
 export const Layout = ({
   children,
   handlePageChange,
+  selectedCategory,
   handleSelect,
   currentPage,
 }) => {
@@ -17,6 +18,7 @@ export const Layout = ({
         <Navbar
           handlePageChange={handlePageChange}
           handleSelect={handleSelect}
+          selectedCategory={selectedCategory}
           currentPage={currentPage}
         />
         <div className="innerContainer">

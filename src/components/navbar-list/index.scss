@@ -11,7 +11,7 @@
 .navbarParentList {
   color: var(--lg-dark-gray);
   font-size: var(--text-base);
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-medium);
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -29,6 +29,10 @@
       rotate: 180deg;
     }
   }
+  &[data-selected="true"] {
+    color: var(--lg-darkest-gray);
+    font-weight: var(--font-semibold);
+  }
 }
 
 .navbarChildrenList {
@@ -44,7 +48,7 @@
   &[data-show="true"] {
     opacity: 1;
     height: 100%;
-    padding: 10px 0;
+    padding: 10px 0 0;
     transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
   }
 }
@@ -53,12 +57,16 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
   cursor: pointer;
   svg {
     height: 16px;
     width: 16px;
     color: var(--lg-dark-gray);
     stroke-width: 2;
+  }
+  &[data-selected="true"] {
+    color: var(--lg-darkest-gray);
+    font-weight: var(--font-medium);
   }
 }

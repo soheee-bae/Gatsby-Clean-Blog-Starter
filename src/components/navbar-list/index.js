@@ -4,7 +4,12 @@ import { ChevronDown } from "../../../assets/icons/chevronDown";
 
 import "./index.scss";
 
-export const NavbarList = ({ show, navLists, handleClick }) => {
+export const NavbarList = ({
+  show,
+  navLists,
+  handleClick,
+  selectedCategory,
+}) => {
   const rootDirectories = navLists.filter(
     (nav) => nav.node.relativeDirectory === ""
   );
@@ -23,6 +28,9 @@ export const NavbarList = ({ show, navLists, handleClick }) => {
               onClick={(e) => handleClick(e, root.node.relativePath)}
               className="navbarParentList"
               data-show={isShow}
+              data-selected={
+                selectedCategory === root.node.relativePath.toLowerCase()
+              }
             >
               {root.node.name}
               {subDirectories.length !== 0 && <ChevronDown />}
@@ -35,6 +43,10 @@ export const NavbarList = ({ show, navLists, handleClick }) => {
                       <div
                         className="navbarChildList"
                         onClick={(e) => handleClick(e, sub.node.relativePath)}
+                        data-selected={
+                          selectedCategory ===
+                          sub.node.relativePath.toLowerCase()
+                        }
                       >
                         <ArrowRight />
                         {sub.node.name}
