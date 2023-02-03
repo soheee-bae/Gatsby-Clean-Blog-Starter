@@ -1,10 +1,9 @@
 @import "../../styles/colors";
 @import "../../styles/mixins";
 @import "../../styles/size";
-
 @import "../../styles/typography";
 
-.navbar {
+.navbarContainer {
   background-color: var(--lg-darker-white);
   min-width: 100vw !important;
   height: $navbar-height-smallScreen !important;
@@ -15,72 +14,27 @@
     position: absolute;
     min-width: $navbar-width-bigScreen !important;
     min-height: 100% !important;
-    padding-top: 100px;
+    padding: 100px 30px;
   }
 }
 
-.navName {
-  @extend .h4;
+.navbarName {
   color: var(--lg-light-black);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  text-align: center;
+}
+
+.navbarItems {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 50px 0 25px;
+}
+
+.navbarItem {
+  color: var(--lg-dark-gray);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
   text-decoration: none;
-  margin-left: 20px;
-
-  &:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s;
-  }
-  @include md {
-    margin: 30px;
-  }
-}
-
-.navLists {
-  display: none;
-  > div > div > div:first-child {
-    color: var(--lg-light-black);
-    font-size: var(--text-md);
-    font-weight: var(--font-semibold);
-  }
-  > div > div > div:not(:first-child) {
-    color: var(--lg-darkest-gray);
-  }
-
-  @include md {
-    display: block;
-    padding: 30px;
-    > div > div > div:first-child {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--lg-lighter-gray);
-    }
-    > div > div > div:not(:first-child) {
-      padding: 5px 0 0 15px;
-    }
-  }
-}
-
-.navDetail {
-  > div > div > div:not(:first-child) {
-    color: var(--lg-darkest-gray);
-  }
-  @include md {
-    > div > div > div:not(:first-child) {
-      padding-left: 15px;
-    }
-  }
-}
-
-.navTitle {
-  cursor: pointer;
-}
-
-p {
-  margin: 0;
-  width: 100%;
-  padding: 5px 0;
-  &[data-show="true"] {
-    font-weight: var(--font-semibold);
-  }
-  &:hover {
-    text-decoration: underline;
-  }
 }
