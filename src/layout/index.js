@@ -1,17 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
 import Theme from "../components/theme";
 
 import "./index.scss";
 
-export const Layout = ({ children, selectedCategory, handleSelect }) => {
+export const Layout = ({
+  children,
+  handlePageChange,
+  handleSelect,
+  currentPage,
+}) => {
   return (
     <React.Fragment>
       <div className="container">
         <Navbar
+          handlePageChange={handlePageChange}
           handleSelect={handleSelect}
-          selectedCategory={selectedCategory}
+          currentPage={currentPage}
         />
         <div className="innerContainer">
           <div className="content">

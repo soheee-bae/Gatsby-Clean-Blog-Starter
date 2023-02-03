@@ -1,27 +1,16 @@
 import React from "react";
 import { ArrowLeft } from "../../../assets/icons/arrowLeft";
 import { ArrowRight } from "../../../assets/icons/arrowRight";
-import { DOTS, usePagination } from "../../hooks/usePagination";
+import { DOTS } from "../../constants/page";
 import "./index.scss";
 
 export const Pagination = (props) => {
-  const {
-    handlePageChange,
-    totalCount,
-    siblingCount = 1,
-    currentPage,
-    pageSize,
-  } = props;
+  const { paginationRange, currentPage, handlePageChange } = props;
 
-  const paginationRange = usePagination({
-    currentPage,
-    totalCount,
-    siblingCount,
-    pageSize,
-  });
-  let lastPage = paginationRange[paginationRange.length - 1];
+  let lastPage =
+    paginationRange && paginationRange[paginationRange?.length - 1];
 
-  if (currentPage === 0 || paginationRange.length < 2) {
+  if (currentPage === 0 || paginationRange?.length < 2) {
     return null;
   }
 
@@ -42,7 +31,7 @@ export const Pagination = (props) => {
           <ArrowLeft />
         </li>
         <ul className="paginationPages">
-          {paginationRange.map((page) => {
+          {paginationRange?.map((page) => {
             if (page === DOTS) {
               return <li className="paginationDots">&#8230;</li>;
             }

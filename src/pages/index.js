@@ -9,17 +9,36 @@ import { graphql } from "gatsby";
 import "../styles/_typography.scss";
 import "./index.scss";
 import { useCategory } from "../hooks/useCategory";
+import { usePosts } from "../hooks/usePosts";
+import { PAGE } from "../constants/page";
+import { usePagination } from "../hooks/usePagination";
 
 export default function Page({ data }) {
   const posts = data.allMarkdownRemark.edges;
-  const { handleSelect, selectedCategory } = useCategory();
+  const { filteredPosts } = usePosts({ posts });
+  const { handleSelect } = useCategory();
+  const { paginationRange, currentPage, handlePageChange } = usePagination({
+    totalCount: filteredPosts.length,
+    siblingCount: PAGE.SIBLINGCOUNT,
+    pageSize: PAGE.PAGESIZE,
+  });
+
   return (
-    <Layout handleSelect={handleSelect} selectedCategory={selectedCategory}>
+    <Layout
+      handlePageChange={handlePageChange}
+      handleSelect={handleSelect}
+      currentPage={currentPage}
+    >
       <div className="homeContainer">
         <Title />
         <Bio />
         <hr />
-        <ContentList posts={posts} />
+        <ContentList
+          filteredPosts={filteredPosts}
+          paginationRange={paginationRange}
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}
+        />
       </div>
     </Layout>
   );

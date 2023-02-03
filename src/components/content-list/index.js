@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.scss";
 import { ContentItem } from "../content-Item";
 import { Pagination } from "../pagination";
-import { usePosts } from "../../hooks/usePosts";
+import { PAGE } from "../../constants";
 
-const SiblingCount = 1;
-const PageSize = 5;
-
-const ContentList = ({ posts }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const { filteredPosts } = usePosts({ posts });
-  const firstPageIndex = (currentPage - 1) * PageSize;
-  const lastPageIndex = firstPageIndex + PageSize;
+const ContentList = ({
+  filteredPosts,
+  paginationRange,
+  currentPage,
+  handlePageChange,
+}) => {
+  const firstPageIndex = (currentPage - 1) * PAGE.PAGESIZE;
+  const lastPageIndex = firstPageIndex + PAGE.PAGESIZE;
   let finalPosts = filteredPosts.slice(firstPageIndex, lastPageIndex);
 
   return (
@@ -22,11 +22,9 @@ const ContentList = ({ posts }) => {
         ))}
       </div>
       <Pagination
-        handlePageChange={(newCurrent) => setCurrentPage(newCurrent)}
-        totalCount={filteredPosts.length}
-        siblingCount={SiblingCount}
+        paginationRange={paginationRange}
         currentPage={currentPage}
-        pageSize={PageSize}
+        handlePageChange={handlePageChange}
       />
     </div>
   );
