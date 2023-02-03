@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
 
 import { CATEGORY } from "../../constants";
@@ -12,12 +12,12 @@ export const Navbar = ({
   selectedCategory,
   currentPage,
 }) => {
-  const [show, setShow] = useState(CATEGORY.ALL);
+  const [show, setShow] = useState(selectedCategory);
 
   const handleClick = (e, link) => {
     e.preventDefault();
     e.stopPropagation();
-
+    console.log("handleClick");
     if (show === link) {
       setShow(CATEGORY.ALL);
     } else if (link.includes("/")) {
