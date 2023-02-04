@@ -19,6 +19,7 @@ const BlogPost = ({ data, pageContext }) => {
     siblingCount: PAGE.SIBLINGCOUNT,
     pageSize: PAGE.PAGESIZE,
   });
+
   return (
     <Layout
       handlePageChange={handlePageChange}
@@ -29,7 +30,10 @@ const BlogPost = ({ data, pageContext }) => {
       <div className="templateContainer">
         <PostHeader data={frontmatter} />
         <PostContent content={html} />
-        <PostNavigation data={pageContext} />
+        <PostNavigation
+          data={pageContext}
+          selectedCategory={selectedCategory}
+        />
         <hr />
         <Bio />
       </div>

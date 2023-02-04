@@ -17,7 +17,7 @@ export const Navbar = ({
   const handleClick = (e, link) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("handleClick");
+
     if (show === link) {
       setShow(CATEGORY.ALL);
     } else if (link.includes("/")) {

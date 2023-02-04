@@ -8,19 +8,18 @@ export const useCategory = () => {
   const search = window.location.search;
   const pathname = window.location.pathname;
   const isHome = pathname === "/";
+  const isBlogPost = window.location.hash.includes("#blog");
 
   const handleSelect = (category) => {
     if (category.charAt(0) === "/") category = category.substring(1);
     setSelectedCategory(category);
-
-    if (!search && !isHome) {
+    if (isBlogPost) {
+      console.log("1");
       navigate(`/?${qs.stringify({ category })}`);
     } else {
-      window.history.pushState(
-        { category },
-        "",
-        `${window.location.pathname}?${qs.stringify({ category })}`
-      );
+      console.log("2");
+
+      navigate(`${pathname}?${qs.stringify({ category })}`);
     }
   };
 

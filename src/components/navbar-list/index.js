@@ -13,43 +13,45 @@ export const NavbarList = ({
   const rootDirectories = navLists.filter(
     (nav) => nav.node.relativeDirectory === ""
   );
-
   return (
     <div className="navbarListContainer">
       {rootDirectories.map((root) => {
+        const { name, relativePath } = root.node;
         const subDirectories = navLists.filter(
-          (nav) => nav.node.relativeDirectory === root.node.name
+          (nav) => nav.node.relativeDirectory === name
         );
-        const isShow =
-          show === root.node.relativePath && subDirectories.length !== 0;
+        const isShow = show === relativePath && subDirectories.length !== 0;
+
         return (
           <div className="navbarList">
             <div
-              onClick={(e) => handleClick(e, root.node.relativePath)}
+              onClick={(e) => handleClick(e, relativePath)}
               className="navbarParentList"
               data-show={isShow}
-              data-selected={
-                selectedCategory === root.node.relativePath.toLowerCase()
-              }
+              data-selected={selectedCategory === relativePath.toLowerCase()}
             >
-              {root.node.name}
+              {name}
               {subDirectories.length !== 0 && <ChevronDown />}
             </div>
             <div className="navbarChildrenList" data-show={isShow}>
               {subDirectories.map((sub) => {
                 {
-                  if (root.node.name === sub.node.relativeDirectory)
+                  const {
+                    relativeDirectory: subRelativeDirectory,
+                    relativePath: subRelativePath,
+                    name: subName,
+                  } = sub.node;
+                  if (name === subRelativeDirectory)
                     return (
                       <div
                         className="navbarChildList"
-                        onClick={(e) => handleClick(e, sub.node.relativePath)}
+                        onClick={(e) => handleClick(e, subRelativePath)}
                         data-selected={
-                          selectedCategory ===
-                          sub.node.relativePath.toLowerCase()
+                          selectedCategory === subRelativePath.toLowerCase()
                         }
                       >
                         <ArrowRight />
-                        {sub.node.name}
+                        {subName}
                       </div>
                     );
                 }
