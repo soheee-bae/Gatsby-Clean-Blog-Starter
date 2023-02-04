@@ -7,7 +7,7 @@ export const useCategory = () => {
   const { search, pathname, hash } = window.location;
   const { category } = qs.parse(search);
 
-  const isHome = pathname === "/";
+  const isHome = pathname === "/" && !search && !hash;
   const isBlogPost = hash.includes("#blog");
 
   const [selectedCategory, setSelectedCategory] = useState(

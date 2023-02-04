@@ -4,13 +4,14 @@ import qs from "query-string";
 
 import "./index.scss";
 import { useCategory } from "../../hooks/useCategory";
+import { CATEGORY } from "../../constants";
 
 export const ContentItem = ({ post }) => {
   const { frontmatter, fields, internal } = post.node;
-  const { selectedCategory } = useCategory();
+  // const { selectedCategory } = useCategory();
 
   const handleClick = (slug) => {
-    const category = selectedCategory;
+    const category = CATEGORY.ALL;
     navigate(`${slug}?${qs.stringify({ category })}#blog`);
   };
 

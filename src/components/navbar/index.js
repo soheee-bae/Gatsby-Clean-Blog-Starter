@@ -5,6 +5,7 @@ import { CATEGORY } from "../../constants";
 import { NavbarList } from "../navbar-list";
 
 import "./index.scss";
+import { useAccordion } from "../../hooks/useAccordion";
 
 export const Navbar = ({
   handlePageChange,
@@ -12,20 +13,12 @@ export const Navbar = ({
   selectedCategory,
   currentPage,
 }) => {
-  const [show, setShow] = useState(selectedCategory);
+  const { show } = useAccordion();
 
   const handleClick = (e, link) => {
     e.preventDefault();
     e.stopPropagation();
-
-    if (show === link) {
-      setShow(CATEGORY.ALL);
-    } else if (link.includes("/")) {
-      setShow(link.split("/")[0]);
-    } else {
-      setShow(link.toLowerCase());
-    }
-
+    // handleShow(link);
     currentPage !== 1 && handlePageChange(1);
     handleSelect(link?.toLowerCase());
   };
