@@ -20,7 +20,8 @@ export const NavbarList = ({
         const subDirectories = navLists.filter(
           (nav) => nav.node.relativeDirectory === name
         );
-        const isShow = show === relativePath && subDirectories.length !== 0;
+        const isShow =
+          show === relativePath.toLowerCase() && subDirectories.length !== 0;
 
         return (
           <div className="navbarList">

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
 
-import { CATEGORY } from "../../constants";
 import { NavbarList } from "../navbar-list";
 
 import "./index.scss";
@@ -13,12 +12,12 @@ export const Navbar = ({
   selectedCategory,
   currentPage,
 }) => {
-  const { show } = useAccordion();
+  const { show, handleShow } = useAccordion();
 
   const handleClick = (e, link) => {
     e.preventDefault();
     e.stopPropagation();
-    // handleShow(link);
+    handleShow(link.toLowerCase());
     currentPage !== 1 && handlePageChange(1);
     handleSelect(link?.toLowerCase());
   };

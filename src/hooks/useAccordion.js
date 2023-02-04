@@ -4,38 +4,28 @@ import qs from "query-string";
 
 export const useAccordion = () => {
   const { search, pathname, hash } = window.location;
-  const { category } = qs.parse(search);
+  const { category } = qs.parse(search.toLowerCase());
   const isHome = pathname === "/" && !search && !hash;
 
   const [show, setShow] = useState(category || CATEGORY.ALL);
 
-  // console.log(window.location);
-  // const handleShow = (link) => {
-  //   console.log({ link });
-  //   if (show === link.toLowerCase() || isHome) {
-  //     setShow(CATEGORY.ALL);
-  //   } else if (link.includes("/")) {
-  //     console.log("here");
-  //     setShow(link.split("/")[0]);
-  //   } else {
-  //     setShow(link.toLowerCase());
-  //   }
-  // };
-  console.log({ show });
-  console.log({ category });
+  const handleShow = (link) => {
+    if (show === link) {
+      setShow(CATEGORY.ALL);
+    } else if (category === link) {
+      setShow(category.toLowerCase());
+    }
+  };
 
   useEffect(() => {
-    if (isHome || show === category) {
+    if (isHome) {
       setShow(CATEGORY.ALL);
     } else if (category.includes("/")) {
-      console.log("1");
-      setShow(category.split("/")[0]);
+      setShow(category.split("/")[0].toLowerCase());
     } else {
-      console.log("2");
-
       setShow(category.toLowerCase());
     }
   }, [search]);
 
-  return { show };
+  return { show, handleShow };
 };
