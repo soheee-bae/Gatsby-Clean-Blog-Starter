@@ -13,7 +13,7 @@ const PostNavigation = ({ data, selectedCategory }) => {
 
   const handleClick = (slug) => {
     const category = selectedCategory;
-    navigate(`${slug}#blog?${qs.stringify({ category })}`);
+    navigate(`${slug}?${qs.stringify({ category })}#blog`);
   };
 
   return (
