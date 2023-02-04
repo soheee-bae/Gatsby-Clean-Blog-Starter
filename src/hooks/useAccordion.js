@@ -4,7 +4,7 @@ import qs from "query-string";
 
 export const useAccordion = () => {
   const { search, pathname, hash } = window.location;
-  const { category } = qs.parse(search.toLowerCase());
+  const { category } = qs.parse(search);
   const isHome = pathname === "/" && !search && !hash;
 
   const [show, setShow] = useState(category || CATEGORY.ALL);
@@ -21,7 +21,7 @@ export const useAccordion = () => {
     if (isHome) {
       setShow(CATEGORY.ALL);
     } else if (category.includes("/")) {
-      setShow(category.split("/")[0].toLowerCase());
+      setShow(category.split("/")[0]);
     } else {
       setShow(category.toLowerCase());
     }

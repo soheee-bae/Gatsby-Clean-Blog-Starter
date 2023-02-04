@@ -23,10 +23,10 @@ hr {
 .container {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-height: 100vh;
   @include md {
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 
@@ -37,8 +37,9 @@ hr {
   align-items: center;
   min-height: $height;
   width: 100%;
+  margin-left: $navbar-width-bigScreen;
   @include md {
-    margin-left: $navbar-width-bigScreen;
+    margin-left: 0;
   }
 }
 

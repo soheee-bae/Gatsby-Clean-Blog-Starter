@@ -32,7 +32,9 @@ export const NavbarList = ({
               data-selected={selectedCategory === relativePath.toLowerCase()}
             >
               {name}
-              {subDirectories.length !== 0 && <ChevronDown />}
+              <div onClick={(e) => handleClick(e, relativePath)}>
+                {subDirectories.length !== 0 && <ChevronDown />}
+              </div>
             </div>
             <div className="navbarChildrenList" data-show={isShow}>
               {subDirectories.map((sub) => {

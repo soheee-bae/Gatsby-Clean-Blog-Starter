@@ -15,8 +15,8 @@ import { usePagination } from "../hooks/usePagination";
 
 export default function Page({ data }) {
   const posts = data.allMarkdownRemark.edges;
-  const { filteredPosts } = usePosts({ posts });
   const { handleSelect, selectedCategory } = useCategory();
+  const { filteredPosts } = usePosts({ posts, selectedCategory });
   const { paginationRange, currentPage, handlePageChange } = usePagination({
     totalCount: filteredPosts.length,
     siblingCount: PAGE.SIBLINGCOUNT,
