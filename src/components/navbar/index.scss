@@ -13,6 +13,7 @@
   @include md {
     position: absolute;
     padding: 0 35px;
+    height: 100%;
     min-height: 100vh;
     min-width: $navbar-width-bigScreen;
   }
@@ -28,29 +29,10 @@
     transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
     opacity: 1;
     height: 100%;
-    padding: 0 25px 10px 15px;
+    padding: 15px 25px 10px 20px;
     z-index: 100;
   }
-
   @include md {
     opacity: 1;
-    height: 100%;
-  }
-}
-
-.navbarHeader {
-  color: var(--lg-light-black);
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
-  display: flex;
-  padding: 0 15px;
-  align-items: center;
-  text-align: center;
-  min-height: $navbar-height-smallScreen;
-  @include md {
-    pointer-events: none;
-  }
-  @include lg {
-    pointer-events: auto;
   }
 }

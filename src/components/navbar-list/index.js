@@ -1,6 +1,6 @@
 import React from "react";
-import { ArrowRight } from "../../../assets/icons/arrowRight";
-import { ChevronDown } from "../../../assets/icons/chevronDown";
+import { NavbarChildrenList } from "../navbar-childrenList";
+import { NavbarParentList } from "../navbar-parentList";
 
 import "./index.scss";
 
@@ -25,41 +25,20 @@ export const NavbarList = ({
 
         return (
           <div className="navbarList">
-            <div
-              onClick={(e) => handleClick(e, relativePath)}
-              className="navbarParentList"
-              data-show={isShow}
-              data-selected={selectedCategory === relativePath.toLowerCase()}
-            >
-              {name}
-              <div onClick={(e) => handleClick(e, relativePath)}>
-                {subDirectories.length !== 0 && <ChevronDown />}
-              </div>
-            </div>
-            <div className="navbarChildrenList" data-show={isShow}>
-              {subDirectories.map((sub) => {
-                {
-                  const {
-                    relativeDirectory: subRelativeDirectory,
-                    relativePath: subRelativePath,
-                    name: subName,
-                  } = sub.node;
-                  if (name === subRelativeDirectory)
-                    return (
-                      <div
-                        className="navbarChildList"
-                        onClick={(e) => handleClick(e, subRelativePath)}
-                        data-selected={
-                          selectedCategory === subRelativePath.toLowerCase()
-                        }
-                      >
-                        <ArrowRight />
-                        {subName}
-                      </div>
-                    );
-                }
-              })}
-            </div>
+            <NavbarParentList
+              selectedCategory={selectedCategory}
+              subDirectories={subDirectories}
+              handleClick={handleClick}
+              rootNode={root.node}
+              isShow={isShow}
+            />
+            <NavbarChildrenList
+              selectedCategory={selectedCategory}
+              subDirectories={subDirectories}
+              handleClick={handleClick}
+              isShow={isShow}
+              name={name}
+            />
           </div>
         );
       })}

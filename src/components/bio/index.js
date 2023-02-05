@@ -24,9 +24,11 @@ const Bio = () => {
               fadeIn={true}
             />
             <div className="bioContent">
-              <span className="bioLink" onClick={() => onClick(githubUrl)}>
-                @{author}
-              </span>
+              <div>
+                <span className="bioLink" onClick={() => onClick(githubUrl)}>
+                  @{author}
+                </span>
+              </div>
               <p className="bioText">{bio}</p>
             </div>
           </div>

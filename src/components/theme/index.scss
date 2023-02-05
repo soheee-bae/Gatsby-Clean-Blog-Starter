@@ -1,20 +1,36 @@
 .theme {
   padding: 10px 20px;
+  align-self: flex-end;
 }
 
 .themeSwitch {
   display: block;
   float: right;
-  cursor: pointer;
+  border: none;
   height: 50px;
   width: 50px;
   border-radius: 50%;
   background-color: var(--lg-darker-white);
-  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background-color: var(--lg-lightest-gray);
+  }
   svg {
-    height: 30px;
-    width: 30px;
     stroke-width: 2;
     color: var(--lg-light-black);
+  }
+  &[data-light="true"] {
+    svg {
+      height: 32px;
+      width: 32px;
+    }
+  }
+  &[data-light="false"] {
+    svg {
+      padding: 5px 2px 0 2px;
+      height: 28px;
+      width: 28px;
+    }
   }
 }

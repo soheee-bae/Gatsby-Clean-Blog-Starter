@@ -36,7 +36,11 @@ const Theme = () => {
 
   return (
     <div className="theme">
-      <button className="themeSwitch" onClick={() => handleSwitch(!checked)}>
+      <button
+        className="themeSwitch"
+        data-light={checked}
+        onClick={() => handleSwitch(!checked)}
+      >
         {checked ? <LightOn /> : <LightOff />}
       </button>
     </div>

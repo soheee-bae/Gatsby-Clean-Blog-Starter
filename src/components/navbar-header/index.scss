@@ -1,0 +1,24 @@
+// @import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/size";
+
+.navbarHeader {
+  color: var(--lg-light-black);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  display: flex;
+  padding: 0 15px;
+  align-items: center;
+  min-height: $navbar-height-smallScreen;
+  p {
+    text-align: center;
+    width: 100%;
+  }
+  @include md {
+    pointer-events: none;
+    margin-top: 160px;
+  }
+  @include lg {
+    pointer-events: auto;
+  }
+}

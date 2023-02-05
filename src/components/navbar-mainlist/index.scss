@@ -15,4 +15,8 @@
   font-size: var(--text-base);
   font-weight: var(--font-medium);
   text-decoration: none;
+  &[data-isHome="true"] {
+    color: var(--lg-darkest-gray);
+    font-weight: var(--font-semibold);
+  }
 }
