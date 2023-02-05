@@ -4,11 +4,8 @@
   justify-content: space-between;
 }
 
-.postNavLink {
-  cursor: pointer;
-}
-
 .postNavButton {
+  cursor: pointer;
   max-width: 160px;
   overflow: hidden;
   white-space: nowrap;
@@ -27,9 +24,14 @@
   gap: 5px;
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: 23px;
+    height: 23px;
     color: var(--lg-darker-gray);
     stroke-width: 2;
+  }
+
+  &:hover {
+    background-color: var(--lg-lightest-gray);
+    color: var(--lg-darkest-gray);
   }
 }
