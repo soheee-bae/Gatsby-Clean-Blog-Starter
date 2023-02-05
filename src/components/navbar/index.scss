@@ -1,86 +1,50 @@
 @import "../../styles/colors";
 @import "../../styles/mixins";
 @import "../../styles/size";
-
 @import "../../styles/typography";
 
-.navbar {
+.navbarContainer {
+  display: block;
+  position: absolute;
+  min-width: $navbar-width-bigScreen;
+  min-height: 100%;
+  padding: 160px 35px 50px;
   background-color: var(--lg-darker-white);
-  min-width: 100vw !important;
-  height: $navbar-height-smallScreen !important;
-  display: flex;
-  align-items: center;
   @include md {
-    display: block;
-    position: absolute;
-    min-width: $navbar-width-bigScreen !important;
-    min-height: 100% !important;
-    padding-top: 100px;
+    padding: 0;
+    min-height: $navbar-height-smallScreen;
+    min-width: 100vw;
+  }
+}
+.navbarContent {
+  @include md {
+    opacity: 0;
+    height: 0;
+    transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
+    hr {
+      margin-top: 25px;
+    }
+    &[data-showMenu="true"] {
+      transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
+      opacity: 1;
+      height: 100%;
+      padding: 20px 25px 20px 20px;
+      z-index: 100;
+    }
   }
 }
 
-.navName {
-  @extend .h4;
+.navbarHeader {
   color: var(--lg-light-black);
-  text-decoration: none;
-  margin-left: 20px;
-
-  &:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s;
-  }
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  text-align: center;
+  pointer-events: none;
   @include md {
-    margin: 30px;
-  }
-}
-
-.navLists {
-  display: none;
-  > div > div > div:first-child {
-    color: var(--lg-light-black);
-    font-size: var(--text-md);
-    font-weight: var(--font-semibold);
-  }
-  > div > div > div:not(:first-child) {
-    color: var(--lg-darkest-gray);
-  }
-
-  @include md {
-    display: block;
-    padding: 30px;
-    > div > div > div:first-child {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--lg-lighter-gray);
-    }
-    > div > div > div:not(:first-child) {
-      padding: 5px 0 0 15px;
-    }
-  }
-}
-
-.navDetail {
-  > div > div > div:not(:first-child) {
-    color: var(--lg-darkest-gray);
-  }
-  @include md {
-    > div > div > div:not(:first-child) {
-      padding-left: 15px;
-    }
-  }
-}
-
-.navTitle {
-  cursor: pointer;
-}
-
-p {
-  margin: 0;
-  width: 100%;
-  padding: 5px 0;
-  &[data-show="true"] {
-    font-weight: var(--font-semibold);
-  }
-  &:hover {
-    text-decoration: underline;
+    display: flex;
+    padding: 0 15px;
+    align-items: center;
+    pointer-events: auto;
+    min-height: $navbar-height-smallScreen;
   }
 }

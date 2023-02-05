@@ -2,8 +2,7 @@ import { useMemo } from "react";
 import { CATEGORY } from "../constants/category";
 import { useCategory } from "./useCategory";
 
-export const usePosts = ({ posts }) => {
-  const { selectedCategory } = useCategory();
+export const usePosts = ({ posts, selectedCategory }) => {
   const splitedSearch = selectedCategory?.split("/");
   const isRootDirectory = splitedSearch?.length <= 1;
 

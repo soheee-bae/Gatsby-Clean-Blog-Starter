@@ -1,17 +1,18 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
+import { DOTS } from "../constants/page";
 
-export const DOTS = "...";
 export const range = (start, end) => {
   let length = end - start + 1;
   return Array.from({ length }, (_, idx) => idx + start);
 };
 
-export const usePagination = ({
-  totalCount,
-  pageSize,
-  siblingCount = 1,
-  currentPage,
-}) => {
+export const usePagination = ({ totalCount, pageSize, siblingCount = 1 }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handlePageChange = (newCurrent) => {
+    setCurrentPage(newCurrent);
+  };
+
   const paginationRange = useMemo(() => {
     const totalPageCount = Math.ceil(totalCount / pageSize);
     const totalPageNumbers = siblingCount + 5;
@@ -51,5 +52,5 @@ export const usePagination = ({
     }
   }, [totalCount, pageSize, siblingCount, currentPage]);
 
-  return paginationRange;
+  return { paginationRange, currentPage, handlePageChange };
 };

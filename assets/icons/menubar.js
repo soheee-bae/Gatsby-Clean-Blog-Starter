@@ -1,10 +1,10 @@
 import React from "react";
 
-export const ArrowDown = () => {
+export const Menubar = () => {
   return (
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M6 9L12 15L18 9"
+        d="M3 12H21M3 6H21M3 18H21"
         stroke="currentColor"
         stroke-width="currentStroke"
         stroke-linecap="round"

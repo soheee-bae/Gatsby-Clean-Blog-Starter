@@ -1,53 +1,61 @@
 import React, { useState } from "react";
-import "./index.scss";
-import { StaticQuery, graphql, Link } from "gatsby";
-import { CATEGORY, navigation } from "../../constants";
+import { StaticQuery, graphql } from "gatsby";
 
-export const Navbar = ({ handleSelect, selectedCategory }) => {
-  const [show, setShow] = useState(CATEGORY.ALL);
+import { NavbarList } from "../navbar-list";
+
+import "./index.scss";
+import { useAccordion } from "../../hooks/useAccordion";
+import useBreakpoint from "../../hooks/useBreakpoints";
+import { NavbarMainList } from "../navbar-mainlist";
+import { Menubar } from "../../../assets/icons/menubar";
+import { Menu } from "../menu";
+
+export const Navbar = ({
+  handlePageChange,
+  handleSelect,
+  selectedCategory,
+  currentPage,
+}) => {
+  const { show, handleShow } = useAccordion();
+
+  const brkPnt = useBreakpoint();
+  const smallScreen = brkPnt === "md" || brkPnt === "sm";
+
+  const [showMenu, setShowMenu] = useState(false);
 
   const handleClick = (e, link) => {
-    setShow(link);
     e.preventDefault();
     e.stopPropagation();
-    handleSelect(link.toLowerCase());
-  };
-
-  const RecursiveNav = ({ data }) => {
-    return (
-      <div className="navList">
-        {data.map((parent) => {
-          const isShow = parent.link === show;
-          return (
-            <div
-              className="navDetail"
-              onClick={(e) => handleClick(e, parent.link)}
-            >
-              <div className="navTitle">
-                <p data-show={isShow}>{parent.title}</p>
-              </div>
-              {parent.children.length > 0 && (
-                <RecursiveNav data={parent.children} />
-              )}
-            </div>
-          );
-        })}
-      </div>
-    );
+    handleShow(link.toLowerCase());
+    currentPage !== 1 && handlePageChange(1);
+    handleSelect(link?.toLowerCase());
   };
 
   return (
     <StaticQuery
       query={navQuery}
       render={(data) => {
-        const { blogName } = data.site.siteMetadata;
+        const { blogName, githubUrl } = data.site.siteMetadata;
+        const navLists = data.allDirectory.edges;
+
         return (
-          <div className="navbar">
-            <Link to="/" className="navName">
-              {blogName}
-            </Link>
-            <div className="navLists">
-              <RecursiveNav data={navigation} />
+          <div className="navbarContainer">
+            <div className="navbarHeader">
+              {smallScreen ? (
+                <Menu setShowMenu={setShowMenu} showMenu={showMenu} />
+              ) : (
+                blogName
+              )}
+            </div>
+            <div className="navbarContent" data-showMenu={showMenu}>
+              <NavbarMainList githubUrl={githubUrl} />
+              <hr />
+              <NavbarList
+                show={show}
+                navLists={navLists}
+                handleClick={handleClick}
+                selectedCategory={selectedCategory}
+              />
             </div>
           </div>
         );
@@ -55,11 +63,29 @@ export const Navbar = ({ handleSelect, selectedCategory }) => {
     />
   );
 };
+
 const navQuery = graphql`
   query NavQuery {
     site {
       siteMetadata {
         blogName
+        githubUrl
+      }
+    }
+    allDirectory(
+      filter: {
+        sourceInstanceName: { eq: "content" }
+        relativePath: { ne: "" }
+      }
+      sort: { relativePath: ASC }
+    ) {
+      edges {
+        node {
+          sourceInstanceName
+          relativeDirectory
+          relativePath
+          name
+        }
       }
     }
   }

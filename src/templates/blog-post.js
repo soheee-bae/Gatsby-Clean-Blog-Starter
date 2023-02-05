@@ -7,18 +7,33 @@ import { useCategory } from "../hooks/useCategory";
 import { Layout } from "../layout";
 import "./blog-post.scss";
 import PostNavigation from "../components/post-navigation";
+import { PAGE } from "../constants";
+import { usePagination } from "../hooks/usePagination";
 
 const BlogPost = ({ data, pageContext }) => {
-  const { markdownRemark } = data;
+  const { markdownRemark, allMarkdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   const { handleSelect, selectedCategory } = useCategory();
+  const { currentPage, handlePageChange } = usePagination({
+    totalCount: allMarkdownRemark.totalCount,
+    siblingCount: PAGE.SIBLINGCOUNT,
+    pageSize: PAGE.PAGESIZE,
+  });
 
   return (
-    <Layout handleSelect={handleSelect} selectedCategory={selectedCategory}>
+    <Layout
+      handlePageChange={handlePageChange}
+      handleSelect={handleSelect}
+      selectedCategory={selectedCategory}
+      currentPage={currentPage}
+    >
       <div className="templateContainer">
         <PostHeader data={frontmatter} />
         <PostContent content={html} />
-        <PostNavigation data={pageContext} />
+        <PostNavigation
+          data={pageContext}
+          selectedCategory={selectedCategory}
+        />
         <hr />
         <Bio />
       </div>
@@ -30,6 +45,9 @@ export default BlogPost;
 
 export const blogQuery = graphql`
   query BlogQuery($slug: String!) {
+    allMarkdownRemark {
+      totalCount
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html

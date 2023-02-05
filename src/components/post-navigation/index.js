@@ -1,33 +1,49 @@
 import React from "react";
-import { Link } from "gatsby";
-import { ArrowLeft } from "../../../assets/icons/arrowLeft";
-import { ArrowRight } from "../../../assets/icons/arrowRight";
+import { navigate } from "gatsby";
+import qs from "query-string";
 
 import "./index.scss";
+import { ChevronLeft } from "../../../assets/icons/chevronLeft";
+import { ChevronRight } from "../../../assets/icons/chevronRight";
 
-const PostNavigation = ({ data }) => {
+const PostNavigation = ({ data, selectedCategory }) => {
   const { next, previous } = data;
   const preTitle = previous?.frontmatter.title || "";
   const nextTitle = next?.frontmatter.title || "";
 
+  const handleClick = (slug) => {
+    const category = selectedCategory;
+    navigate(`${slug}?${qs.stringify({ category })}#blog`);
+  };
+
   return (
     <div className="postNavigation">
-      <Link to={previous?.fields.slug} className="postNavLink">
+      <div
+        onClick={() => {
+          handleClick(previous?.fields.slug);
+        }}
+        className="postNavLink"
+      >
         {previous && (
           <div className="postNavButton">
-            <ArrowLeft />
+            <ChevronLeft />
             {preTitle}
           </div>
         )}
-      </Link>
-      <Link to={next?.fields.slug} className="postNavLink">
+      </div>
+      <div
+        onClick={() => {
+          handleClick(next?.fields.slug);
+        }}
+        className="postNavLink"
+      >
         {next && (
           <div className="postNavButton">
             {nextTitle}
-            <ArrowRight />
+            <ChevronRight />
           </div>
         )}
-      </Link>
+      </div>
     </div>
   );
 };

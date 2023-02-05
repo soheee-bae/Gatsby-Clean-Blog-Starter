@@ -1,17 +1,24 @@
 import React from "react";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
+import qs from "query-string";
 
 import "./index.scss";
+import { useCategory } from "../../hooks/useCategory";
+import { CATEGORY } from "../../constants";
 
 export const ContentItem = ({ post }) => {
   const { frontmatter, fields, internal } = post.node;
+  // const { selectedCategory } = useCategory();
+
+  const handleClick = (slug) => {
+    const category = CATEGORY.ALL;
+    navigate(`${slug}?${qs.stringify({ category })}#blog`);
+  };
 
   return (
-    <Link to={fields.slug} className="contentLink">
-      <div className="contentItem">
-        <h4 className="h4 itemTitle">{frontmatter.title}</h4>
-        <p className="body-1 itemText">{internal.content}</p>
-      </div>
-    </Link>
+    <div className="contentItem" onClick={() => handleClick(fields.slug)}>
+      <h4 className="h4 itemTitle">{frontmatter.title}</h4>
+      <p className="body-1 itemText">{internal.content}</p>
+    </div>
   );
 };

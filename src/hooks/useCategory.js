@@ -1,30 +1,31 @@
 import { useEffect, useState } from "react";
 import { CATEGORY } from "../constants";
 import qs from "query-string";
+import { navigate } from "gatsby";
 
 export const useCategory = () => {
-  const [selectedCategory, setSelectedCategory] = useState(CATEGORY.ALL);
-  const search = window.location.search;
-  const pathname = window.location.pathname;
-  const isHome = pathname === "/";
+  const { search, pathname, hash } = window.location;
+  const { category } = qs.parse(search);
+
+  const isHome = pathname === "/" && !search && !hash;
+  const isBlogPost = hash.includes("#blog");
+
+  const [selectedCategory, setSelectedCategory] = useState(
+    category || CATEGORY.ALL
+  );
 
   const handleSelect = (category) => {
     if (category.charAt(0) === "/") category = category.substring(1);
-    setSelectedCategory(category);
 
-    if (!search && !isHome) {
-      window.location = `/?${qs.stringify({ category })}`;
+    setSelectedCategory(category);
+    if (isBlogPost) {
+      navigate(`/?${qs.stringify({ category })}`);
     } else {
-      window.history.pushState(
-        { category },
-        "",
-        `${window.location.pathname}?${qs.stringify({ category })}`
-      );
+      navigate(`${pathname}?${qs.stringify({ category })}`);
     }
   };
 
   useEffect(() => {
-    const { category } = qs.parse(search);
     if (!search && isHome) {
       setSelectedCategory(CATEGORY.ALL);
     } else {
