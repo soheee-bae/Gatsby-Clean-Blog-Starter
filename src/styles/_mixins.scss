@@ -21,6 +21,13 @@
   }
 }
 
+// Extra Large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
 // Custom devices
 @mixin rwd($screen) {
   @media (min-width: #{$screen+'px'}) {

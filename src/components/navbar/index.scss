@@ -5,12 +5,13 @@
 
 .navbarContainer {
   display: block;
-  position: absolute;
+  position: fixed;
   padding: 0;
   min-height: $navbar-height-smallScreen;
   min-width: 100vw;
   background-color: var(--lg-darker-white);
   @include md {
+    position: absolute;
     padding: 0 35px;
     min-height: 100vh;
     min-width: $navbar-width-bigScreen;
