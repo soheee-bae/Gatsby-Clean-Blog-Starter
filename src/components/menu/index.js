@@ -1,11 +1,11 @@
 import React from "react";
 import "./index.scss";
-import { Hamburger } from "../../../assets/icons/hamburger";
+import { Menubar } from "../../../assets/icons/menubar";
 
-export const Menu = () => (
-  <div className="menu">
-    <button className="menuButton">
-      <Hamburger />
-    </button>
-  </div>
-);
+export const Menu = ({ setShowMenu, showMenu }) => {
+  return (
+    <div className="menu" onClick={() => setShowMenu(!showMenu)}>
+      <Menubar />
+    </div>
+  );
+};

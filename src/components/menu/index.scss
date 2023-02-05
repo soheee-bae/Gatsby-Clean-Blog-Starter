@@ -1,20 +1,10 @@
 .menu {
-  padding: 10px 20px;
-}
-
-.menuButton {
-  display: block;
-  float: right;
-  cursor: pointer;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: var(--lg-darker-white);
-  border: none;
+  display: flex;
   svg {
-    height: 30px;
-    width: 30px;
+    height: 26px;
+    width: 26px;
     stroke-width: 2;
     color: var(--lg-light-black);
+    cursor: pointer;
   }
 }

@@ -1,10 +1,14 @@
-import React from "react";
-import { StaticQuery, graphql, Link } from "gatsby";
+import React, { useState } from "react";
+import { StaticQuery, graphql } from "gatsby";
 
 import { NavbarList } from "../navbar-list";
 
 import "./index.scss";
 import { useAccordion } from "../../hooks/useAccordion";
+import useBreakpoint from "../../hooks/useBreakpoints";
+import { NavbarMainList } from "../navbar-mainlist";
+import { Menubar } from "../../../assets/icons/menubar";
+import { Menu } from "../menu";
 
 export const Navbar = ({
   handlePageChange,
@@ -13,6 +17,11 @@ export const Navbar = ({
   currentPage,
 }) => {
   const { show, handleShow } = useAccordion();
+
+  const brkPnt = useBreakpoint();
+  const smallScreen = brkPnt === "md" || brkPnt === "sm";
+
+  const [showMenu, setShowMenu] = useState(false);
 
   const handleClick = (e, link) => {
     e.preventDefault();
@@ -31,22 +40,23 @@ export const Navbar = ({
 
         return (
           <div className="navbarContainer">
-            <div className="navbarName">{blogName}</div>
-            <div className="navbarItems">
-              <Link to="/" className="navbarItem">
-                Home
-              </Link>
-              <Link to={githubUrl} target="_blank" className="navbarItem">
-                Github
-              </Link>
+            <div className="navbarHeader">
+              {smallScreen ? (
+                <Menu setShowMenu={setShowMenu} showMenu={showMenu} />
+              ) : (
+                blogName
+              )}
             </div>
-            <hr />
-            <NavbarList
-              show={show}
-              navLists={navLists}
-              handleClick={handleClick}
-              selectedCategory={selectedCategory}
-            />
+            <div className="navbarContent" data-showMenu={showMenu}>
+              <NavbarMainList githubUrl={githubUrl} />
+              <hr />
+              <NavbarList
+                show={show}
+                navLists={navLists}
+                handleClick={handleClick}
+                selectedCategory={selectedCategory}
+              />
+            </div>
           </div>
         );
       }}

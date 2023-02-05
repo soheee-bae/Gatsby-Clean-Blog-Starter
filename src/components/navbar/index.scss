@@ -6,43 +6,45 @@
 .navbarContainer {
   display: block;
   position: absolute;
-  min-width: $navbar-width-bigScreen !important;
-  min-height: 100% !important;
+  min-width: $navbar-width-bigScreen;
+  min-height: 100%;
   padding: 160px 35px 50px;
   background-color: var(--lg-darker-white);
   @include md {
-    min-width: 100vw !important;
-    max-height: $navbar-height-smallScreen !important;
-    min-height: $navbar-height-smallScreen !important;
     padding: 0;
-    display: flex;
-    align-items: center;
+    min-height: $navbar-height-smallScreen;
+    min-width: 100vw;
+  }
+}
+.navbarContent {
+  @include md {
+    opacity: 0;
+    height: 0;
+    transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
+    hr {
+      margin-top: 25px;
+    }
+    &[data-showMenu="true"] {
+      transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
+      opacity: 1;
+      height: 100%;
+      padding: 20px 25px 20px 20px;
+      z-index: 100;
+    }
   }
 }
 
-.navbarName {
+.navbarHeader {
   color: var(--lg-light-black);
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
   text-align: center;
+  pointer-events: none;
   @include md {
-    display: none;
+    display: flex;
+    padding: 0 15px;
+    align-items: center;
+    pointer-events: auto;
+    min-height: $navbar-height-smallScreen;
   }
-}
-
-.navbarItems {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 60px 0 25px;
-  @include md {
-    display: none;
-  }
-}
-
-.navbarItem {
-  color: var(--lg-dark-gray);
-  font-size: var(--text-base);
-  font-weight: var(--font-medium);
-  text-decoration: none;
 }
