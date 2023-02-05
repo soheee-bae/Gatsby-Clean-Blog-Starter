@@ -1,14 +1,17 @@
-import { graphql } from "gatsby";
 import React from "react";
+import { graphql } from "gatsby";
+
+import Bio from "../components/bio";
 import PostContent from "../components/post-content";
 import PostHeader from "../components/post-header";
-import Bio from "../components/bio";
+import PostNavigation from "../components/post-navigation";
+
 import { useCategory } from "../hooks/useCategory";
+import { usePagination } from "../hooks/usePagination";
+
+import { PAGE } from "../constants";
 import { Layout } from "../layout";
 import "./blog-post.scss";
-import PostNavigation from "../components/post-navigation";
-import { PAGE } from "../constants";
-import { usePagination } from "../hooks/usePagination";
 
 const BlogPost = ({ data, pageContext }) => {
   const { markdownRemark, allMarkdownRemark } = data;

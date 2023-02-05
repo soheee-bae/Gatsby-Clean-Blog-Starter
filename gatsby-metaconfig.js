@@ -8,5 +8,4 @@ module.exports = {
   githubUrl: "https://github.com/soheee-bae",
   blogUrl: "https://soheee-bae.github.io/soheee-bae/",
 
-  navTitle: "My Blog",
 };

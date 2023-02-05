@@ -6,31 +6,34 @@
 .navbarContainer {
   display: block;
   position: absolute;
-  min-width: $navbar-width-bigScreen;
-  min-height: 100%;
-  padding: 160px 35px 50px;
+  padding: 0;
+  min-height: $navbar-height-smallScreen;
+  min-width: 100vw;
   background-color: var(--lg-darker-white);
   @include md {
-    padding: 0;
-    min-height: $navbar-height-smallScreen;
-    min-width: 100vw;
+    padding: 0 35px;
+    min-height: 100vh;
+    min-width: $navbar-width-bigScreen;
   }
 }
+
 .navbarContent {
-  @include md {
-    opacity: 0;
-    height: 0;
+  opacity: 0;
+  height: 0;
+  hr {
+    margin-top: 25px;
+  }
+  &[data-showMenu="true"] {
     transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
-    hr {
-      margin-top: 25px;
-    }
-    &[data-showMenu="true"] {
-      transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
-      opacity: 1;
-      height: 100%;
-      padding: 20px 25px 20px 20px;
-      z-index: 100;
-    }
+    opacity: 1;
+    height: 100%;
+    padding: 0 25px 10px 15px;
+    z-index: 100;
+  }
+
+  @include md {
+    opacity: 1;
+    height: 100%;
   }
 }
 
@@ -38,13 +41,15 @@
   color: var(--lg-light-black);
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
+  display: flex;
+  padding: 0 15px;
+  align-items: center;
   text-align: center;
-  pointer-events: none;
+  min-height: $navbar-height-smallScreen;
   @include md {
-    display: flex;
-    padding: 0 15px;
-    align-items: center;
+    pointer-events: none;
+  }
+  @include lg {
     pointer-events: auto;
-    min-height: $navbar-height-smallScreen;
   }
 }

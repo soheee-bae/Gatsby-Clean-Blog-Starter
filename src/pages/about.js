@@ -6,7 +6,7 @@ export default function About() {
     <div className="aboutRoot">
       <div className="aboutNavbar" />
       <div className="aboutContent">
-        <div className="aboutTitle">Your Name</div>
+        <div className="aboutTitle">About me </div>
         <hr />
       </div>
     </div>

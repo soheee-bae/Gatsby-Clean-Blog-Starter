@@ -1,5 +1,4 @@
 const localStorage = window.localStorage;
-const sessionStorage = window.sessionStorage;
 
 function isEmpty(storage) {
   return !storage || storage === {};
