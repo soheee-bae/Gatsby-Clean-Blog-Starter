@@ -1,19 +1,20 @@
 import React from "react";
 import Image from "gatsby-image";
-import { StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql, navigate } from "gatsby";
 
 import "./index.scss";
 
 const Bio = () => {
-  const onClick = (githubUrl) => {
-    window.open(githubUrl, "_blank");
+  const handleClick = () => {
+    navigate("/about");
+    // window.open(githubUrl, "_blank");
   };
 
   return (
     <StaticQuery
       query={bioQuery}
       render={(data) => {
-        const { author, bio, githubUrl } = data.site.siteMetadata;
+        const { author, bio } = data.site.siteMetadata;
 
         return (
           <div className="bioContainer">
@@ -25,7 +26,7 @@ const Bio = () => {
             />
             <div className="bioContent">
               <div>
-                <span className="bioLink" onClick={() => onClick(githubUrl)}>
+                <span className="bioLink" onClick={handleClick}>
                   @{author}
                 </span>
               </div>

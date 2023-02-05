@@ -16,8 +16,9 @@
 .bioContent {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 3px;
+  gap: 5px;
 }
 
 .bioLink {
@@ -26,6 +27,7 @@
   padding: 5px;
   color: var(--lg-darkest-gray);
   cursor: pointer;
+
   &:hover {
     background-color: var(--lg-darker-white);
     color: var(--lg-light-black);

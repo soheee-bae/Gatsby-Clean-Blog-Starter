@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { CATEGORY } from "../constants/category";
-import { useCategory } from "./useCategory";
 
 export const usePosts = ({ posts, selectedCategory }) => {
   const splitedSearch = selectedCategory?.split("/");
