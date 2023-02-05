@@ -22,10 +22,12 @@
 .navbarContent {
   opacity: 0;
   height: 0;
+  pointer-events: none;
   hr {
     margin-top: 25px;
   }
   &[data-showMenu="true"] {
+    pointer-events: initial;
     transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
     opacity: 1;
     height: 100%;
@@ -33,6 +35,7 @@
     z-index: 100;
   }
   @include md {
+    pointer-events: initial;
     opacity: 1;
   }
 }
