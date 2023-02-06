@@ -1,4 +1,4 @@
-<img src="./assets/images/blogStarter.png"  >
+<img src="./assets/images/Starter-Light.png"  >
 
 ## :eyes: Demo
 
