@@ -73,10 +73,18 @@ module.exports = {
               ascii: false,
             },
           },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              destinationDir: `path/to/dir`,
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+            },
+          },
+          `gatsby-remark-responsive-iframe`,
         ],
       },
     },
-
+    `gatsby-plugin-offline`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
