@@ -32,6 +32,7 @@ const Theme = () => {
     const checked = defaultTheme === THEME.LIGHT;
     setChecked(checked);
     handleSwitch(checked);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

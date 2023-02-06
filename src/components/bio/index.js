@@ -7,7 +7,6 @@ import "./index.scss";
 const Bio = () => {
   const handleClick = () => {
     navigate("/about");
-    // window.open(githubUrl, "_blank");
   };
 
   return (
@@ -26,7 +25,12 @@ const Bio = () => {
             />
             <div className="bioContent">
               <div>
-                <span className="bioLink" onClick={handleClick}>
+                <span
+                  className="bioLink"
+                  onClick={handleClick}
+                  onKeyDown={handleClick}
+                  role="presentation"
+                >
                   @{author}
                 </span>
               </div>

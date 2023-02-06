@@ -8,13 +8,18 @@ import "./index.scss";
 export const ContentItem = ({ post }) => {
   const { frontmatter, fields, excerpt } = post.node;
   const { TITLE, SUBTITLE, DATE, CONTENT } = CONTENTITEM;
-  const handleClick = (slug) => {
+  const handleClick = () => {
     const category = CATEGORY.ALL;
-    navigate(`${slug}?${qs.stringify({ category })}#blog`);
+    navigate(`${fields.slug}?${qs.stringify({ category })}#blog`);
   };
 
   return (
-    <div className="contentItem" onClick={() => handleClick(fields.slug)}>
+    <div
+      className="contentItem"
+      onClick={handleClick}
+      onKeyDown={handleClick}
+      role="presentation"
+    >
       {TITLE && <h4 className="h4 itemTitle">{frontmatter.title}</h4>}
       {SUBTITLE && <p className="h5 itemSubTitle">{frontmatter.subtitle}</p>}
       {CONTENT && (
