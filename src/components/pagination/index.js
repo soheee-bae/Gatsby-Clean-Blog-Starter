@@ -20,6 +20,7 @@ export const Pagination = (props) => {
   const handlePrev = () => {
     handlePageChange(currentPage - 1);
   };
+
   return (
     <div className="pagination">
       <ul className="paginationButtons">
@@ -38,7 +39,7 @@ export const Pagination = (props) => {
             return (
               <li
                 className="paginationPage"
-                data-current={page === currentPage}
+                data-current={currentPage === page}
                 onClick={() => handlePageChange(page)}
               >
                 {page}

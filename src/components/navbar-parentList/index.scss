@@ -1,0 +1,26 @@
+.navbarParentList {
+  color: var(--lg-dark-gray);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  svg {
+    height: 18px;
+    width: 18px;
+    color: var(--lg-dark-gray);
+    stroke-width: 3;
+    transition: 0.2s ease-in-out;
+  }
+  &[data-show="true"] {
+    svg {
+      rotate: 180deg;
+    }
+  }
+  &[data-selected="true"] {
+    color: var(--lg-darkest-gray);
+    font-weight: var(--font-semibold);
+  }
+}

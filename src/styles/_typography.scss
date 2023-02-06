@@ -25,42 +25,35 @@
   --font-extrabold: 800;
 }
 
-// blog title in main
 .h1 {
   font-size: var(--text-5xl);
   font-weight: var(--font-bold);
 }
 
-//title in detail page
 .h2 {
   font-size: var(--text-3xl);
   font-weight: var(--font-bold);
 }
 
-// subtitle in detail page
 .h3 {
   font-size: var(--text-2xl);
   font-weight: var(--font-medium);
 }
 
-//title of each blog in main
 .h4 {
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);
 }
 
-//bio
 .h5 {
   font-size: var(--text-base);
   font-weight: var(--font-medium);
 }
 
-//content
 .body-1 {
   font-size: var(--text-base);
   font-weight: var(--font-normal);
 }
-//date
 
 .body-2 {
   font-size: var(--text-xs);

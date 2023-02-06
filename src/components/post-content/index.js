@@ -3,12 +3,10 @@ import "./index.scss";
 
 const PostContent = ({ content }) => {
   return (
-    <div className="postContent">
-      <div
-        className="body-1 content"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </div>
+    <div
+      className="body-1 postContent"
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
   );
 };
 export default PostContent;

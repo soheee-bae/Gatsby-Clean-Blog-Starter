@@ -22,7 +22,6 @@ const PostNavigation = ({ data, selectedCategory }) => {
         onClick={() => {
           handleClick(previous?.fields.slug);
         }}
-        className="postNavLink"
       >
         {previous && (
           <div className="postNavButton">
@@ -35,7 +34,6 @@ const PostNavigation = ({ data, selectedCategory }) => {
         onClick={() => {
           handleClick(next?.fields.slug);
         }}
-        className="postNavLink"
       >
         {next && (
           <div className="postNavButton">

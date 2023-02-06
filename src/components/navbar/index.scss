@@ -5,46 +5,37 @@
 
 .navbarContainer {
   display: block;
-  position: absolute;
-  min-width: $navbar-width-bigScreen;
-  min-height: 100%;
-  padding: 160px 35px 50px;
+  position: fixed;
+  padding: 0;
+  min-height: $navbar-height-smallScreen;
+  min-width: 100vw;
   background-color: var(--lg-darker-white);
   @include md {
-    padding: 0;
-    min-height: $navbar-height-smallScreen;
-    min-width: 100vw;
-  }
-}
-.navbarContent {
-  @include md {
-    opacity: 0;
-    height: 0;
-    transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
-    hr {
-      margin-top: 25px;
-    }
-    &[data-showMenu="true"] {
-      transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
-      opacity: 1;
-      height: 100%;
-      padding: 20px 25px 20px 20px;
-      z-index: 100;
-    }
+    position: absolute;
+    padding: 0 35px;
+    height: 100%;
+    min-height: 100vh;
+    min-width: $navbar-width-bigScreen;
   }
 }
 
-.navbarHeader {
-  color: var(--lg-light-black);
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
-  text-align: center;
+.navbarContent {
+  opacity: 0;
+  height: 0;
   pointer-events: none;
+  hr {
+    margin-top: 25px;
+  }
+  &[data-showMenu="true"] {
+    pointer-events: initial;
+    transition: all 0.2s cubic-bezier(0.54, 0.18, 0.22, 0.79);
+    opacity: 1;
+    height: 100%;
+    padding: 15px 25px 10px 20px;
+    z-index: 100;
+  }
   @include md {
-    display: flex;
-    padding: 0 15px;
-    align-items: center;
-    pointer-events: auto;
-    min-height: $navbar-height-smallScreen;
+    pointer-events: initial;
+    opacity: 1;
   }
 }

@@ -1,11 +1,14 @@
 @import "../styles/size";
+@import "../styles/mixins";
 
 .templateContainer {
-  max-width: $mainContent-width;
-  padding: 0 20px;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding-top: 100px;
+  gap: 80px;
+  height: 100%;
+  width: 90%;
+  @include md {
+    width: 100%;
+    max-width: $mainContent-width;
+  }
 }

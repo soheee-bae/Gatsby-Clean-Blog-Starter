@@ -32,11 +32,16 @@ const Theme = () => {
     const checked = defaultTheme === THEME.LIGHT;
     setChecked(checked);
     handleSwitch(checked);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="theme">
-      <button className="themeSwitch" onClick={() => handleSwitch(!checked)}>
+      <button
+        className="themeSwitch"
+        data-light={checked}
+        onClick={() => handleSwitch(!checked)}
+      >
         {checked ? <LightOn /> : <LightOff />}
       </button>
     </div>

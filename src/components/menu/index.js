@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.scss";
+
 import { Menubar } from "../../../assets/icons/menubar";
 
 export const Menu = ({ setShowMenu, showMenu }) => {

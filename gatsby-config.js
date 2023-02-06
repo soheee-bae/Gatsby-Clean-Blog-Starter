@@ -14,13 +14,13 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `templates`,
-    //     path: `${__dirname}/src/templates`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `templates`,
+        path: `${__dirname}/src/templates`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -62,16 +62,20 @@ module.exports = {
         maxWidth: 590,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-mdx`,
-    //   options: {
-    //     extensions: [`.md`, `.mdx`],
-    //     gatsbyRemarkPlugins: [
-
-    //     ],
-    //   },
-    // },
-    { resolve: `gatsby-transformer-remark` },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-emoji",
+            options: {
+              emojiConversion: "shortnameToUnicode",
+              ascii: false,
+            },
+          },
+        ],
+      },
+    },
 
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

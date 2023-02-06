@@ -1,6 +1,6 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
 import "./index.scss";
+import { StaticQuery, graphql } from "gatsby";
 
 const Title = () => {
   return (

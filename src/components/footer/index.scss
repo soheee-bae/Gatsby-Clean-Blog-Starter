@@ -8,5 +8,8 @@
   a {
     text-decoration: none;
     color: var(--lg-light-black);
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

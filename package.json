@@ -23,6 +23,7 @@
     "gatsby-plugin-sass": "^6.4.0",
     "gatsby-plugin-sharp": "^5.4.0",
     "gatsby-plugin-styled-components": "^6.4.0",
+    "gatsby-remark-emoji": "^0.0.3",
     "gatsby-remark-images": "^7.4.0",
     "gatsby-source-filesystem": "^5.4.0",
     "gatsby-transformer-remark": "^6.4.0",

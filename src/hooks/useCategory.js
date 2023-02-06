@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { CATEGORY } from "../constants";
-import qs from "query-string";
 import { navigate } from "gatsby";
+import qs from "query-string";
+
+import { CATEGORY } from "../constants";
 
 export const useCategory = () => {
   const { search, pathname, hash } = window.location;

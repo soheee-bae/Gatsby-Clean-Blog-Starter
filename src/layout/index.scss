@@ -7,12 +7,8 @@ $height: calc(100vh - $navbar-height-smallScreen);
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: "Open Sans", sans-serif;
   background-color: var(--lg-white);
-  // -webkit-text-size-adjust: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
-  // transition: background-color 0.3s, color 0.3s;
 }
 
 hr {
@@ -21,30 +17,36 @@ hr {
 }
 
 .container {
-  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  position: relative;
   min-height: 100vh;
   @include md {
-    flex-direction: column;
+    flex-direction: row;
   }
 }
 
 .innerContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  min-height: $height;
+  justify-content: space-between;
   width: 100%;
-  margin-left: $navbar-width-bigScreen;
+  min-height: $height;
+  margin-left: 0;
+  margin-top: $navbar-height-smallScreen;
   @include md {
-    margin-left: 0;
+    padding: 0 20px;
+    margin-top: 0;
+    margin-left: calc(
+      $navbar-width-bigScreen + 70px
+    ); // navbar width + navbar padding
   }
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-top: 100px;
 }

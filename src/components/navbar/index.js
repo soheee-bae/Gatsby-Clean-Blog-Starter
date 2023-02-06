@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { StaticQuery, graphql } from "gatsby";
 
+import { useAccordion } from "../../hooks/useAccordion";
+
+import { NavbarHeader } from "../navbar-header";
+import { NavbarMainList } from "../navbar-mainList";
 import { NavbarList } from "../navbar-list";
 
 import "./index.scss";
-import { useAccordion } from "../../hooks/useAccordion";
-import useBreakpoint from "../../hooks/useBreakpoints";
-import { NavbarMainList } from "../navbar-mainlist";
-import { Menubar } from "../../../assets/icons/menubar";
-import { Menu } from "../menu";
 
 export const Navbar = ({
   handlePageChange,
@@ -17,10 +16,6 @@ export const Navbar = ({
   currentPage,
 }) => {
   const { show, handleShow } = useAccordion();
-
-  const brkPnt = useBreakpoint();
-  const smallScreen = brkPnt === "md" || brkPnt === "sm";
-
   const [showMenu, setShowMenu] = useState(false);
 
   const handleClick = (e, link) => {
@@ -40,13 +35,11 @@ export const Navbar = ({
 
         return (
           <div className="navbarContainer">
-            <div className="navbarHeader">
-              {smallScreen ? (
-                <Menu setShowMenu={setShowMenu} showMenu={showMenu} />
-              ) : (
-                blogName
-              )}
-            </div>
+            <NavbarHeader
+              setShowMenu={setShowMenu}
+              showMenu={showMenu}
+              blogName={blogName}
+            />
             <div className="navbarContent" data-showMenu={showMenu}>
               <NavbarMainList githubUrl={githubUrl} />
               <hr />
