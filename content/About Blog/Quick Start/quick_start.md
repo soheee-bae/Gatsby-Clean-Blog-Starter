@@ -1,7 +1,7 @@
 ---
 title: "Quick Start"
 date: 2023-02-06 10:51:13
-subtitle: ""
+subtitle: "Let's get started!"
 category: "Quick Start"
 draft: false
 ---
@@ -41,8 +41,7 @@ Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is
 ### 4. Add your content
 
 You can write contents to blog in `/content` directory.
-
-You can add new directories
+As you add a new directory, it will be listed as new category in the navbar!
 
 ### 5. Fix meta data
 

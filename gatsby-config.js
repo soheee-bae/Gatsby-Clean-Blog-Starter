@@ -80,6 +80,12 @@ module.exports = {
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              inlineCodeMarker: "%",
+            },
+          },
           `gatsby-remark-responsive-iframe`,
         ],
       },

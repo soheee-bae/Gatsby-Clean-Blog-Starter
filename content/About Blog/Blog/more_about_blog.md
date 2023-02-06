@@ -77,7 +77,7 @@ Note! - If you decide to change the name (e.g. `--lg-black`), you need to edit t
 
 ### 8. Custom post thumbnail
 
-<img src="../../../assets/images/contentItem.png"  width="700" height="190">
+<img src="../../../assets/images/contentItem.png"  width="10px" height="190">
 
 You can display or hide (`title, subtitle, date, content`) by setting the option from `src/constants/contentItem.js`!
 

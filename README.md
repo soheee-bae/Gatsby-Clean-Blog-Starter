@@ -45,7 +45,7 @@ You can fix meta data in `/gatsby-metaconfig.js` file.
 
 ## :yellow_heart: Customize
 
-### Gatsby config
+### :computer: Gatsby config
 
 ```
 root
@@ -54,7 +54,7 @@ root
 └── gatsby-node.js
 ```
 
-### Folder structure
+### :file_folder: Folder structure
 
 ```
 src
@@ -69,7 +69,7 @@ src
     └── blog-post.js // blog template
 ```
 
-### Style
+### :art: Style
 
 You can customize color, font, breakpoints and height / width of layout in `src/styles` directory.
 
@@ -82,4 +82,10 @@ src/styles
 └── _typography.scss
 ```
 
-### Tip
+### :mag: Tip (Things you can customize!)
+
+- Profile image : replace file in `/assets/images/moon.jpeg`.
+- Pagination : set sibling count (of the current page) and page size (number of posts per page) in `src/constants/page.js`.
+- Resize layout : You can resize layout (e.g. `height of footer`) in `src/styles/_size.scss`.
+- Change color : All colors that have been used in this blog are in `src/styles/_color.scss`. You can simply change hex code color from `src/styles/_color.scss`!
+- Post thumbnail : You can display or hide (`title, subtitle, date, content`) by setting the option from `src/constants/contentItem.js`!

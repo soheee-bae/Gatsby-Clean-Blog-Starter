@@ -1,8 +1,9 @@
 {
   "name": "gatsby-clean-blog-starter",
-  "private": true,
+  "private": false,
   "description": "Gatsby Clean Theme Blog starter",
   "version": "0.1.0",
+  "author": "SoHee Bae",
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
@@ -17,7 +18,7 @@
     "@mdx-js/mdx": "^2.2.1",
     "@mdx-js/react": "^2.2.1",
     "babel-plugin-styled-components": "^2.0.7",
-    "gatsby": "^5.4.0",
+    "gatsby": "^5.5.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-mdx": "^5.4.0",
     "gatsby-plugin-offline": "^6.5.0",
@@ -27,6 +28,7 @@
     "gatsby-remark-copy-linked-files": "^6.5.0",
     "gatsby-remark-emoji": "^0.0.3",
     "gatsby-remark-images": "^7.4.0",
+    "gatsby-remark-prismjs": "^7.5.0",
     "gatsby-remark-responsive-iframe": "^6.5.0",
     "gatsby-source-filesystem": "^5.4.0",
     "gatsby-transformer-remark": "^6.4.0",
