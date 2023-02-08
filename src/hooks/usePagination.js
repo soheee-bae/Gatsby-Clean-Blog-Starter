@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { DOTS } from "../constants/page";
 
 export const range = (start, end) => {

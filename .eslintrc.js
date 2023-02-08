@@ -8,5 +8,8 @@ module.exports = {
     __PATH_PREFIX__: true,
     graphql: false,
   },
+  rules: {
+    "react-hooks/exhaustive-deps": 0,
+  },
   extends: `react-app`,
 };

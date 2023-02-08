@@ -2,8 +2,10 @@
 .postContent {
   color: var(--lg-light-black);
   line-height: 1.4rem;
+  width: 100%;
   pre {
-    display: 100%;
+    white-space: pre-wrap;
+    display: block;
     overflow-y: hidden;
     overflow-x: auto;
     padding: 15px;

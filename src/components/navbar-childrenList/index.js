@@ -13,27 +13,24 @@ export const NavbarChildrenList = ({
   return (
     <div className="navbarChildrenList" data-show={isShow}>
       {subDirectories.map((sub) => {
-        {
-          const {
-            relativeDirectory: subRelativeDirectory,
-            relativePath: subRelativePath,
-            name: subName,
-          } = sub.node;
+        const {
+          relativeDirectory: subRelativeDirectory,
+          relativePath: subRelativePath,
+          name: subName,
+        } = sub.node;
 
-          if (name === subRelativeDirectory)
-            return (
-              <div
-                className="navbarChildList"
-                onClick={(e) => handleClick(e, subRelativePath)}
-                data-selected={
-                  selectedCategory === subRelativePath.toLowerCase()
-                }
-              >
-                <ArrowRight />
-                {subName}
-              </div>
-            );
-        }
+        if (name === subRelativeDirectory) {
+          return (
+            <div
+              className="navbarChildList"
+              onClick={(e) => handleClick(e, subRelativePath)}
+              data-selected={selectedCategory === subRelativePath.toLowerCase()}
+            >
+              <ArrowRight />
+              {subName}
+            </div>
+          );
+        } else return null;
       })}
     </div>
   );
