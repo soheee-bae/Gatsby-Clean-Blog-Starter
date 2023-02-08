@@ -5,7 +5,7 @@ import { useAccordion } from "../../hooks/useAccordion";
 
 import { NavbarHeader } from "../navbar-header";
 import { NavbarList } from "../navbar-list";
-import { NavbarMainList } from "../navbar-mainList";
+import { NavbarMainList } from "../navbar-headerList";
 
 import "./index.scss";
 
