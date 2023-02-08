@@ -12,7 +12,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "prettier": "prettier --write \"./**/*.{js,jsx,json}\""
+    "prettier": "prettier --write \"./**/*.{js,jsx,json,md}\"",
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public ."
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.2.1",
@@ -20,6 +21,7 @@
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^5.5.0",
     "gatsby-image": "^3.11.0",
+    "gatsby-plugin-image": "^3.6.0",
     "gatsby-plugin-mdx": "^5.4.0",
     "gatsby-plugin-offline": "^6.5.0",
     "gatsby-plugin-sass": "^6.4.0",
@@ -29,6 +31,7 @@
     "gatsby-remark-emoji": "^0.0.3",
     "gatsby-remark-images": "^7.4.0",
     "gatsby-remark-prismjs": "^7.5.0",
+    "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-remark-responsive-iframe": "^6.5.0",
     "gatsby-source-filesystem": "^5.4.0",
     "gatsby-transformer-remark": "^6.4.0",
@@ -48,6 +51,9 @@
     "url": "https://github.com/sohee28/gatsby-clean-blog/issues"
   },
   "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react": "^7.32.2",
     "prettier": "2.8.3"
   }
 }

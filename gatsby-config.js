@@ -52,20 +52,21 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
         path: `${__dirname}/assets/images`,
-      },
-    },
-    {
-      resolve: `gatsby-remark-images`,
-      options: {
-        maxWidth: 590,
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              linkImagesToOriginal: false,
+            },
+          },
           {
             resolve: "gatsby-remark-emoji",
             options: {
@@ -74,22 +75,17 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-copy-linked-files`,
+            resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              destinationDir: `path/to/dir`,
-              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+              wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              inlineCodeMarker: "%",
-            },
-          },
-          `gatsby-remark-responsive-iframe`,
+
+          `gatsby-remark-copy-linked-files`,
         ],
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
