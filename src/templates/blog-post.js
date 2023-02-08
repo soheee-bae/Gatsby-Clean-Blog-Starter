@@ -23,7 +23,6 @@ const BlogPost = ({ data, pageContext }) => {
     pageSize: PAGE.PAGESIZE,
   });
 
-  console.log(html);
   return (
     <Layout
       handlePageChange={handlePageChange}
