@@ -4,8 +4,8 @@ import { StaticQuery, graphql } from "gatsby";
 import { useAccordion } from "../../hooks/useAccordion";
 
 import { NavbarHeader } from "../navbar-header";
-import { NavbarMainList } from "../navbar-mainList";
 import { NavbarList } from "../navbar-list";
+import { NavbarMainList } from "../navbar-mainList";
 
 import "./index.scss";
 
