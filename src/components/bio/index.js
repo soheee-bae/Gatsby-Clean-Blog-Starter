@@ -33,7 +33,7 @@ const Bio = () => {
     <div className="bioContainer">
       <Image
         className="bioImage"
-        fixed={data.avatar.childImageSharp.fixed}
+        fixed={bioQuery.avatar.childImageSharp.fixed}
         alt={author}
         fadeIn={true}
       />

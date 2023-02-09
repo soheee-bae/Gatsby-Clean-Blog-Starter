@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { isBrowser } from "../utils";
 
 const getDeviceConfig = (width) => {
   if (width < 576) {

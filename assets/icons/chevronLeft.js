@@ -6,9 +6,9 @@ export const ChevronLeft = () => {
       <path
         d="M15 18L9 12L15 6"
         stroke="currentColor"
-        stroke-width="currentStroke"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="currentStroke"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

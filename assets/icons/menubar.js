@@ -6,9 +6,9 @@ export const Menubar = () => {
       <path
         d="M3 12H21M3 6H21M3 18H21"
         stroke="currentColor"
-        stroke-width="currentStroke"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="currentStroke"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
