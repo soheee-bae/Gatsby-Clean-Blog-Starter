@@ -17,8 +17,8 @@ const ContentList = ({
   return (
     <div>
       <div className="listContainer">
-        {finalPosts.map((post) => (
-          <ContentItem post={post} />
+        {finalPosts.map((post, index) => (
+          <ContentItem key={index} post={post} />
         ))}
       </div>
       <Pagination

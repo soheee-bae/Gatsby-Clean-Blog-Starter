@@ -12,7 +12,7 @@ export const NavbarChildrenList = ({
 }) => {
   return (
     <div className="navbarChildrenList" data-show={isShow}>
-      {subDirectories.map((sub) => {
+      {subDirectories.map((sub, index) => {
         const {
           relativeDirectory: subRelativeDirectory,
           relativePath: subRelativePath,
@@ -22,6 +22,7 @@ export const NavbarChildrenList = ({
         if (name === subRelativeDirectory) {
           return (
             <div
+              key={index}
               className="navbarChildList"
               onClick={(e) => handleClick(e, subRelativePath)}
               data-selected={selectedCategory === subRelativePath.toLowerCase()}

@@ -32,12 +32,13 @@ export const Pagination = (props) => {
           <ChevronLeft />
         </li>
         <ul className="paginationPages">
-          {paginationRange?.map((page) => {
+          {paginationRange?.map((page, index) => {
             if (page === DOTS) {
               return <li className="paginationDots">&#8230;</li>;
             }
             return (
               <li
+                key={index}
                 className="paginationPage"
                 data-current={currentPage === page}
                 onClick={() => handlePageChange(page)}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 import { useAccordion } from "../../hooks/useAccordion";
 
@@ -26,60 +26,52 @@ export const Navbar = ({
     handleSelect(link?.toLowerCase());
   };
 
-  return (
-    <StaticQuery
-      query={navQuery}
-      render={(data) => {
-        const { blogName, githubUrl } = data.site.siteMetadata;
-        const navLists = data.allDirectory.edges;
-
-        return (
-          <div className="navbarContainer">
-            <NavbarHeader
-              setShowMenu={setShowMenu}
-              showMenu={showMenu}
-              blogName={blogName}
-            />
-            <div className="navbarContent" data-showMenu={showMenu}>
-              <NavbarMainList githubUrl={githubUrl} />
-              <hr />
-              <NavbarList
-                show={show}
-                navLists={navLists}
-                handleClick={handleClick}
-                selectedCategory={selectedCategory}
-              />
-            </div>
-          </div>
-        );
-      }}
-    />
-  );
-};
-
-const navQuery = graphql`
-  query NavQuery {
-    site {
-      siteMetadata {
-        blogName
-        githubUrl
+  const navQuery = useStaticQuery(graphql`
+    query NavQuery {
+      site {
+        siteMetadata {
+          blogName
+          githubUrl
+        }
       }
-    }
-    allDirectory(
-      filter: {
-        sourceInstanceName: { eq: "content" }
-        relativePath: { ne: "" }
-      }
-      sort: { relativePath: ASC }
-    ) {
-      edges {
-        node {
-          sourceInstanceName
-          relativeDirectory
-          relativePath
-          name
+      allDirectory(
+        filter: {
+          sourceInstanceName: { eq: "content" }
+          relativePath: { ne: "" }
+        }
+        sort: { relativePath: ASC }
+      ) {
+        edges {
+          node {
+            sourceInstanceName
+            relativeDirectory
+            relativePath
+            name
+          }
         }
       }
     }
-  }
-`;
+  `);
+
+  const { blogName, githubUrl } = navQuery.site.siteMetadata;
+  const navLists = navQuery.allDirectory.edges;
+  return (
+    <div className="navbarContainer">
+      <NavbarHeader
+        setShowMenu={setShowMenu}
+        showMenu={showMenu}
+        blogName={blogName}
+      />
+      <div className="navbarContent" data-showmenu={showMenu}>
+        <NavbarMainList githubUrl={githubUrl} />
+        <hr />
+        <NavbarList
+          show={show}
+          navLists={navLists}
+          handleClick={handleClick}
+          selectedCategory={selectedCategory}
+        />
+      </div>
+    </div>
+  );
+};

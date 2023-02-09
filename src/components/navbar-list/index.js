@@ -15,7 +15,7 @@ export const NavbarList = ({
   );
   return (
     <div className="navbarListContainer">
-      {rootDirectories.map((root) => {
+      {rootDirectories.map((root, index) => {
         const { name, relativePath } = root.node;
         const subDirectories = navLists.filter(
           (nav) => nav.node.relativeDirectory === name
@@ -24,7 +24,7 @@ export const NavbarList = ({
           show === relativePath.toLowerCase() && subDirectories.length !== 0;
 
         return (
-          <div className="navbarList">
+          <div className="navbarList" key={index}>
             <NavbarParentList
               selectedCategory={selectedCategory}
               subDirectories={subDirectories}

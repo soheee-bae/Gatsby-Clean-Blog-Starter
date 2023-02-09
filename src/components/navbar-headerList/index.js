@@ -9,7 +9,7 @@ export const NavbarMainList = ({ githubUrl }) => {
 
   return (
     <div className="navbarItems">
-      <Link to="/" className="navbarItem" data-isHome={isHome}>
+      <Link to="/" className="navbarItem" data-ishome={isHome}>
         Home
       </Link>
       <Link to={githubUrl} target="_blank" className="navbarItem">
