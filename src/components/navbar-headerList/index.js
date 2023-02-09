@@ -3,7 +3,8 @@ import { Link } from "gatsby";
 import "./index.scss";
 
 export const NavbarMainList = ({ githubUrl }) => {
-  const { pathname, hash, search } = window.location;
+  const location = typeof window !== "undefined" && window.location;
+  const { search, pathname, hash } = location;
   const isHome = pathname === "/" && !search && !hash;
 
   return (

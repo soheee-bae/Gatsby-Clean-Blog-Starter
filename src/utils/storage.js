@@ -1,4 +1,4 @@
-const localStorage = window.localStorage;
+import { isBrowser } from ".";
 
 function isEmpty(storage) {
   return !storage || storage === {};
@@ -24,9 +24,15 @@ export function setValueTo(storage, key, data) {
 }
 
 export const getFromLocal = (key) => {
-  return getValueFrom(localStorage, key);
+  if (isBrowser) {
+    const localStorage = window.localStorage;
+    return getValueFrom(localStorage, key);
+  }
 };
 
 export const setToLocal = (key, value) => {
-  return setValueTo(localStorage, key, value);
+  if (isBrowser) {
+    const localStorage = window.localStorage;
+    return setValueTo(localStorage, key, value);
+  }
 };

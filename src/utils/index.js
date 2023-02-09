@@ -8,3 +8,5 @@ export function getTheme(initialValue) {
 export function setTheme(themeValue) {
   return setToLocal(`${STORAGE.LOCAL_STORAGE_KEY}/theme`, themeValue);
 }
+
+export const isBrowser = () => typeof window !== "undefined";

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { isBrowser } from "../utils";
 
 const getDeviceConfig = (width) => {
   if (width < 576) {
@@ -13,17 +14,19 @@ const getDeviceConfig = (width) => {
 };
 
 const useBreakpoint = () => {
+  const newWindow = typeof window !== "undefined" && window;
+
   const [brkPnt, setBrkPnt] = useState(() =>
-    getDeviceConfig(window.innerWidth)
+    getDeviceConfig(newWindow?.innerWidth)
   );
 
   useEffect(() => {
     const calcInnerWidth = () => {
-      setBrkPnt(getDeviceConfig(window.innerWidth));
+      setBrkPnt(getDeviceConfig(newWindow?.innerWidth));
     };
 
-    window.addEventListener("resize", calcInnerWidth);
-    return () => window.removeEventListener("resize", calcInnerWidth);
+    newWindow?.addEventListener("resize", calcInnerWidth);
+    return () => newWindow?.removeEventListener("resize", calcInnerWidth);
   }, []);
 
   return brkPnt;

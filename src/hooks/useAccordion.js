@@ -3,7 +3,8 @@ import { CATEGORY } from "../constants";
 import qs from "query-string";
 
 export const useAccordion = () => {
-  const { search, pathname, hash } = window.location;
+  const location = typeof window !== "undefined" && window.location;
+  const { search, pathname, hash } = location;
   const { category } = qs.parse(search);
   const isHome = pathname === "/" && !search && !hash;
 

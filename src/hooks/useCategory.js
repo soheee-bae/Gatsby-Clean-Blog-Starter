@@ -5,11 +5,12 @@ import qs from "query-string";
 import { CATEGORY } from "../constants";
 
 export const useCategory = () => {
-  const { search, pathname, hash } = window.location;
+  const location = typeof window !== "undefined" && window.location;
+  const { search, pathname, hash } = location;
   const { category } = qs.parse(search);
 
   const isHome = pathname === "/" && !search && !hash;
-  const isBlogPost = hash.includes("#blog");
+  const isBlogPost = hash?.includes("#blog");
 
   const [selectedCategory, setSelectedCategory] = useState(
     category || CATEGORY.ALL
