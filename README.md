@@ -1,9 +1,16 @@
 <img src="./assets/images/Starter-Light.png"  >
 <img src="./assets/images/Starter-Dark.png"  >
 
-## :eyes: Demo
+## :eyes: Check this out as well!
+There is an updated version of this blog template : [Gatsby-Image-Blog-Starter](https://github.com/soheee-bae/Gatsby-Image-Blog-Starter)
+
+<br/>
+
+## 🚀 Demo
 
 https://gatsbycleanblogstarterkit.gatsbyjs.io/
+
+<br/>
 
 ## :fire: Quick Start
 
