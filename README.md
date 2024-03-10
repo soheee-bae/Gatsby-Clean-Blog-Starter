@@ -8,7 +8,7 @@ There is an updated version of this blog template : [Gatsby-Image-Blog-Starter](
 
 ## 🚀 Demo
 
-https://main--jade-cranachan-05a41b.netlify.app/
+https://gatsby-clean-blog-starter.netlify.app/
 
 <br/>
 
